@@ -1,0 +1,26 @@
+{
+  "name": "project-2_team-1",
+  "version": "1.0.0",
+  "description": "Project 2 - Inventory System",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sylvrleef/project-2_team-1.git"
+  },
+  "author": "Jenny Usrey-Scott, Anita Rodgerson, Jason Saenz, Sade Browne, and Henry Dillard",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sylvrleef/project-2_team-1/issues"
+  },
+  "homepage": "https://github.com/Sylvrleef/project-2_team-1#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "handlebars": "^4.0.11",
+    "mysql": "^2.15.0",
+    "sequelize": "^4.31.1",
+    "sequelize-cli": "^3.2.0"
+  }
+}
