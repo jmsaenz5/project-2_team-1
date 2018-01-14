@@ -18,6 +18,8 @@
 
   * Must meet good quality coding standards (indentation, scoping, naming)
 
+  * Should use Handlebars for server-side templating
+
 Project 2 for Team 1
 
 Project Manager: Sade Browne
