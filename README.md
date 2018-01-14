@@ -33,3 +33,4 @@ Inventory Tracking System
 5. The program will send out emails using React (new technology).
 6. Users will be able to pull up POs to see what was purchased on the PO.
 7. Users will also be able to look up items and see what PO they were purchased under.
+8. Jason is awesome.
