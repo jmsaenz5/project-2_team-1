@@ -1,0 +1,84 @@
+# Application Requirements
+****Refer to siteflow.pdf in repository for visual representation of application flow/requirements.
+
+## Database Requirements /Sade/
+Table requirements:
+* Vendor (set up dummy data)
+	* vendor_name
+* User 
+	* Last_Name
+	* First_Name
+	* Staff_ID
+	* Security_Role
+	* AD_Login
+	* Location_Code
+	* Person_ID
+* Purchase_Requests (set up dummy data)
+	* PR_Number
+	* Description
+	* Create_Date
+	* Vendor
+	* Status
+	* Complete_Date
+
+## Login Screen /Henry/
+After login user will be taken to respective welcome page depending on user rights. Those three user right are as follows:
+
+### Initiator
+Page will populate a “Welcome ___________, you are logged in as an Initiator” message. There will be a generic search form that will allow user to search for purchase requests or purchase orders by P.O/P.R. number, Initiator, date created or vendor. Page will also include the following links (user’s rights):
+* *Create Requests*
+	* This page will be a form. Inputs needed:
+		* Date Needed (REQUIRED INPUT)
+		* *Add Item* (REQUIRED INPUT) (button will redirect to new page)
+			* /“Add Item” Page/ (this page will be a form that takes the following inputs):
+				* Description of Item
+				* Quantity
+				* Unit of Measure (drop down): bot, box, case, ctn, dozen, each, foot, gal, gross, hour, hund, job, lgth, lot, month, other, pair, pkg, pound, quart, ream, roll, sack, set, thou, yard, year
+				* Estimated Dollar Amt
+				* Add (generates another add form), Save (saves item and redirects them back to previous page, where item will now be populated), Cancel buttons (does not save item and redirects user back to previous page)
+		* Tax Rate
+		* Estimated Shipping
+		* Justification (REQUIRED INPUT)
+		* Comments
+		* Save Requests Button (which will direct to view requests page)
+			* Button must save PR to Purchase_Requests table in “Tracker”  database. Important that a unique ID is created for each new PR. This will be the purchase request number. Email will also be automatically sent to Admin to notify that a new purchase request has been added for approval.
+				* Purchase request table must have fields: PR_number, Description, Create_Date, Vendor, Status, Complete_Date
+* *View Requests*
+	* List table of purchase requests made by user
+	* There will be a search bar where user can search their purchase requests by PR number as well as by vendor
+
+### Reviewer
+Page will populate a “Welcome ___________, you are logged in as a Reviewer” message. There will be a generic search form that will allow user to search for purchase requests or purchase orders by P.O/P.R. number, Initiator, date created or vendor.  Page will also include the following links (user’s rights):
+* *Requests for review*
+
+### Admin
+Page will populate a “Welcome ___________, you are logged in as an Admin” message. There will be a generic search form that will allow user to search for purchase requests or purchase orders by P.O/P.R. number, Initiator, date created or vendor.  Page will also include the following links (user’s rights):
+* *Create Requests* 
+	* duplicate of ‘create requests’ page above
+* *Edit Requests*
+* *Track Request History*
+* *Authorize Requests*
+* *Withdraw Requests*
+* *Generate Purchase Order*
+* *Cancel Purchase Order*
+* *User Functionality*
+	* This page will ask if admin would like to add, disable or edit a user
+		* *Add* (will be a form with the following input fields)
+			* First Name
+			* Last Name
+			* Tracks Staff ID
+			* AD Login Name
+			* Update Date - will take a ‘from’ and ’to’ date
+			* Cost Center ID
+			* Location Code
+			* Person ID 
+			* Security Role
+			* Account Status (drop down): Any, Active, Inactive, Queued for Review
+		* *Disable/Edit*
+			* List tables of users in the systems with disable link column and an edit link column
+			* Allow admin to click ‘disable’ to disable a user
+				* Pop up will appear asking admin to confirm that they want the profile disabled
+				* If yes, redirect to success page, if no, close pop up and stay on current page.
+			* Allow admin to click ‘edit’ to edit a user
+				* Will redirect to a page similar to the ‘add’ page above that will already be populated with the user’s info. Admin can update as pleases and select ‘save’ which will redirect  back to ‘disable/edit’ page where the new changes will be updated. Admin may also click ‘cancel’ which will redirect back to ‘disable / edit’ page without saving the changes.
+	
