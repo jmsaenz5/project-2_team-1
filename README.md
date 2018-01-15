@@ -12,7 +12,7 @@
 
   * Must utilize at least one new library, package, or technology that we haven’t discussed
 
-  * Must have a polished frontend / UI 
+  * Must have a polished frontend / UI
 
   * Must have folder structure that meets MVC Paradigm
 
@@ -26,7 +26,7 @@ Project Manager: Sade Browne
 Git Master: Jenny Usrey-Scott
 Team: Jason Saenz, Anita Rodgerson, and Henry Dillard
 
-Inventory Tracking System
+Inventory and Purchasing Tracking System
 
 1. We will have a user authentication in place.
 2. There will be different levels of access for users.
