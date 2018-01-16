@@ -1,0 +1,20 @@
+<h2>Create Request</h2>
+
+<form class="form-control">
+    <div class="container">
+        <label for="dateNeeded">Date Needed </label>
+        <input type="date" id="dateNeeded" required>
+        <button class="btn" id="addItem" type="button" required>Add Item</button>
+        {{itemInfo}}
+        <label for="taxRate">Tax Rate</label>
+        <input type="number" id="taxRate" step="0.01">
+        <label for="estShip">Estimated Shipping</label>
+        <input type="number" id="estShip" step="0.01">
+        <label for="justify">Justification</label>
+        <textarea name="justify" id="justify" cols="50" rows="5" required></textarea>
+        <label for="comments">Comments</label>
+        <textarea name="comments" id="comments" cols="50" rows="5"></textarea>
+        <br><br>
+        <button type="submit" class="btn" id="saveRequest">Save Request</button>
+    </div>
+</form>
