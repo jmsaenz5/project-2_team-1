@@ -3,6 +3,9 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/Initiator/all", function(req, res) {
     db.Initiator.findAll({
+      where: {
+        Initiator: req.params.Initiator
+      }
       include: [db.purchaseRequest]
     }).then(function(dbInitiaor) {
       res.json(dbInitiaor);
@@ -14,7 +17,7 @@ module.exports = function(app) {
       where: {
         purchaseRequest: req.params.purchaseRequest
       },
-      include: [db.purchaseRequest]
+      include: [db.Initiator]
     }).then(function(dbInitiaor) {
       res.json(dbInitiaor);
     });

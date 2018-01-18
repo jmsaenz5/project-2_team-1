@@ -3,6 +3,9 @@ var db = require("../models");
 module.exports = function(app) {
   app.get("/api/Reviewer/all", function(req, res) {
     db.Reviewer.findAll({
+      where: {
+        Reviewer: req.params.Reviewer
+      }
       include: [db.purchaseRequest]
     }).then(function(dbReviewer) {
       res.json(dbReviewer);
@@ -14,7 +17,7 @@ module.exports = function(app) {
       where: {
         purchaseRequest: req.params.purchaseRequest
       },
-      include: [db.purchaseRequest]
+      include: [db.Reviewer]
     }).then(function(dbReviewer) {
       res.json(dbReviewer);
     });
