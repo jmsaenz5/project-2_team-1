@@ -5,7 +5,7 @@ module.exports = function(app) {
     db.Initiator.findAll({
       where: {
         Initiator: req.params.Initiator
-      }
+      },
       include: [db.purchaseRequest]
     }).then(function(dbInitiaor) {
       res.json(dbInitiaor);
@@ -33,3 +33,4 @@ module.exports = function(app) {
       res.json(dbInitiaor);
     });
   });
+};
