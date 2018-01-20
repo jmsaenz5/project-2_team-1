@@ -1,63 +1,48 @@
-/**
-boilerplate code from Medium.com create a schema according to the docs and store it in it's own folder
-the schema should describe the fields we have in our form and specify the data it can expect
-**/
+// add body-parser for parsing incoming request bodies in a middelware
+// create a POST route for sending data to server 
+// store the values of the filled out form & store the data in the db with the schema..
 
-var mongoose = require('mongoose');
-var UserSchema = new mongoose.Schema({
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-    trim: true
-  },
-  username: {
-    type: String,
-    unique: true,
-    required: true,
-    trim: true
-  },
-  password: {
-    type: String,
-    required: true,
-  },
-  passwordConf: {
-    type: String,
-    required: true,
+// DONE IN USER FUNCTIONALITY ON ADMIN RIGHTS
+Last_Name
+  * First_Name
+  * Staff_ID
+  * Security_Role
+  * AD_Login
+  * Location_Code
+  * Person_ID
+
+app.post("/admin/adduser", function(req, res) {
+
+  if (req.body.email &&
+    req.body.First_Name &&
+    req.body.Staff_ID &&
+    req.body.Security_Role &&
+    req.body.AD_Login &&
+    req.body.Location_Code &&
+    req.body.Person_ID &&
+    req.body.passwordConf) {
+    var userData = {
+      firstName: req.body.First_Name,
+      staffID: req.body.Staff_ID,
+      securityRole: req.body.Security_Role,
+      adLogin: req.body.AD_Login,
+      locationCode: req.body.Location_Code,
+      personID: req.body.Person_ID,
+      passwordConf: req.body.passwordConf,
+    }
+    //use schema.create to insert data into the db
+    User.create(userData, function (err, user) {
+      if (err) {
+        return next(err)
+      } else {
+        return res.redirect('/profile');
+      }
+    });
   }
 });
-var User = mongoose.model('User', UserSchema);
-module.exports = User;
 
-/**
-"add body-parser for parsing incoming request bodies in a middelware
-create a POST route for sending data to server
-store the values of the filled out form & store the data in the db
-with the schema.."
-**/
+//install the bcrypt package & add prehook to mongoose schema
 
-if (req.body.email &&
-  req.body.username &&
-  req.body.password &&
-  req.body.passwordConf) {
-  var userData = {
-    email: req.body.email,
-    username: req.body.username,
-    password: req.body.password,
-    passwordConf: req.body.passwordConf,
-  }
-  //use schema.create to insert data into the db
-  User.create(userData, function (err, user) {
-    if (err) {
-      return next(err)
-    } else {
-      return res.redirect('/profile');
-    }
-  });
-}
-/**
-"install the bcrypt package & add prehook to mongoose schema"
-**/
 //hashing a password before saving it to the database
 UserSchema.pre('save', function (next) {
   var user = this;
