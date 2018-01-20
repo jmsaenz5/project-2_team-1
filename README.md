@@ -1,6 +1,8 @@
 ![alt text](https://github.com/Sylvrleef/project-2_team-1/blob/master/public/img/TRAX_Logo.png "Logo Title")
 
-# Project 2 Team 1
+<p align="center">
+## Project 2 Team 1
+</p>
 
 * **The requirements for Project #2 are as follows:**
 
