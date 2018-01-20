@@ -14,5 +14,5 @@ For project two our team developed a purchase request and inventory tracking sys
   * Must meet good quality coding standards (indentation, scoping, naming)
   * Should use Handlebars for server-side templating
 
-**Team**
-Sade Browne (Project Manager), Jenny Usrey-Scott (Git Master), Jason Saenz, Anita Rodgerson, Henry Dillard
+**Team:**
+* Sade Browne (Project Manager), Jenny Usrey-Scott (Git Master), Jason Saenz, Anita Rodgerson, Henry Dillard
