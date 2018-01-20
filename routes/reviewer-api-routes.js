@@ -6,7 +6,7 @@ module.exports = function(app) {
       where: {
         Reviewer: req.params.Reviewer
       }
-      include: [db.purchaseRequest]
+      include: [db.purchaseRequest, db.purchaseOrder]
     }).then(function(dbReviewer) {
       res.json(dbReviewer);
     });

@@ -6,7 +6,7 @@ module.exports = function(app) {
       where: {
         Initiator: req.params.Initiator
       }
-      include: [db.purchaseRequest]
+      include: [db.purchaseRequest, db.purchaseOrder]
     }).then(function(dbInitiaor) {
       res.json(dbInitiaor);
     });

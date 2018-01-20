@@ -1,6 +1,6 @@
-const Sequelize = require("sequelize");
+var Sequelize = require("sequelize");
 
-var sequelize = new Sequelize("project2", "root","" {
+var sequelize = new Sequelize("project2", "root", "" {
   host: "localhost",
   dialect: "mysql",
   pool: {
