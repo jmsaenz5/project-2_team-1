@@ -12,6 +12,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-FzkHk/sZxl/KbNoSMiA0TgjqdV7ka8VPX/i/Nf2EyhH28i1EVaZ7uf2EEDBBHBo5"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+    <script src="../public/js/create-request.js" type="text/javascript"></script>
     <title>Document</title>
 </head>
 
@@ -126,37 +127,3 @@
 
 </html>
 
-<script>
-    var requestInfo;
-    $(document).ready(function () {
-        $("#saveBtn").on("click", function (e) {
-            e.preventDefault();
-            var modalInfo = {
-                itemName: $("#itemName").val().trim(),
-                quantity: $("#quant").val().trim(),
-                measureUnit: $("#measureUnit").val(),
-                estimatedPrice: $("#estPrice").val().trim()
-            }
-            console.log("farts");
-            $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`)
-            $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`)
-            $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`)
-            $("#newItemPrice").append(`<p>Estimated Price: $${modalInfo.estimatedPrice}</p>`)
-            console.log("poo");
-        })
-        $("#saveRequest").on("click", function () {
-            requestInfo = {
-                dateNeeded: $("#dateNeeded").val().trim(),
-                itemName: $("#itemName").val().trim(),
-                quantity: $("#quant").val().trim(),
-                measureUnit: $("#measureUnit").val(),
-                estimatedPrice: $("#estPrice").val().trim(),
-                taxRate: $("#taxRate").val().trim(),
-                estimatedShipping: $("#estShip").val().trim(),
-                justification: $("#justify").val().trim(),
-                comments: $("#comments").val().trim()
-            }
-            module.exports = requestInfo; 
-        })
-    })
-</script>
