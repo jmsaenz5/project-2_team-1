@@ -103,6 +103,20 @@
 </div>
 
 <script type="text/javascript">
-var modalInfo = [];
-$
+ $(document).ready(function () {
+        $("#saveBtn").on("click", function () {
+            var modalInfo = {
+                itemName: $("#itemName").val().trim(),
+                quantity: $("#quant").val().trim(),
+                measureUnit: $("#measureUnit").val(),
+                estimatedPrice: $("#estPrice").val().trim()
+            }
+            console.log("farts");
+            $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`)
+            $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`)
+            $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`)
+            $("#newItemPrice").append(`<p>Estimated Price: ${modalInfo.estimatedPrice}</p>`)
+            console.log("poo");
+        })
+    })
 </script>

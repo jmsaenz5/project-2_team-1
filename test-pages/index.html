@@ -11,8 +11,7 @@
         crossorigin="anonymous"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-FzkHk/sZxl/KbNoSMiA0TgjqdV7ka8VPX/i/Nf2EyhH28i1EVaZ7uf2EEDBBHBo5"
         crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="project-2_team-1/public/css/styles.css">
-    <script src="project-2_team-1/public/js/create-request.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
     <title>Document</title>
 </head>
 
@@ -54,9 +53,7 @@
                 <textarea class="formInput" name="comments" id="comments" cols="45" rows="4"></textarea>
             </div>
         </div>
-        <div class="row">
-            <button type="submit" class="btn btn-info col-md-4" id="saveRequest">Save Request</button>
-        </div>
+        <button type="submit" class="btn btn-info" id="saveRequest">Save Request</button>
     </form>
 
     <!--Modal-->
@@ -67,7 +64,7 @@
                     <h4 class="modal-title">Add Item</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form>
+                <form id="submit">
                     <div class="modal-body">
                         <div class="row">
                             <label class="formLabel col-md-4" for="itemName">Item</label>
@@ -83,42 +80,42 @@
                             <label class="formLabel col-md-4" for="estPrice">Estimated Dollar Amount</label>
                         </div>
                         <div class="row">
-                            <select class="formInput col-md-4 validate" name="measureUnit" id="measureUnit">
-                                <option value="" selected>Select a unit</option>
-                                <option value="bottle">Bottle</option>
-                                <option value="box">Box</option>
-                                <option value="carton">Carton</option>
-                                <option value="case">Case</option>
-                                <option value="dozen">Dozen</option>
-                                <option value="each">Each</option>
-                                <option value="foot">Foot</option>
-                                <option value="gallon">Gallon</option>
-                                <option value="gross">Gross</option>
-                                <option value="hour">Hour</option>
-                                <option value="hundred">Hundred</option>
-                                <option value="job">Job</option>
-                                <option value="length">Length</option>
-                                <option value="lot">Lot</option>
-                                <option value="month">Month</option>
-                                <option value="other">Other</option>
-                                <option value="pair">Pair</option>
-                                <option value="package">Package</option>
-                                <option value="pound">Pound</option>
-                                <option value="quart">Quart</option>
-                                <option value="ream">Ream</option>
-                                <option value="roll">Roll</option>
-                                <option value="sack">Sack</option>
-                                <option value="set">Set</option>
-                                <option value="thousand">Thousand</option>
-                                <option value="yard">Yard</option>
-                                <option value="year">Year</option>
+                            <select class="formInput col-md-4 validate" name="measureUnit" id="measureUnit" required="true">
+                                <option value="" selected>Select a Unit</option>
+                                <option value="Bottle">Bottle</option>
+                                <option value="Box">Box</option>
+                                <option value="Carton">Carton</option>
+                                <option value="Case">Case</option>
+                                <option value="Dozen">Dozen</option>
+                                <option value="Each">Each</option>
+                                <option value="Foot">Foot</option>
+                                <option value="Gallon">Gallon</option>
+                                <option value="Gross">Gross</option>
+                                <option value="Hour">Hour</option>
+                                <option value="Hundred">Hundred</option>
+                                <option value="Job">Job</option>
+                                <option value="Length">Length</option>
+                                <option value="Lot">Lot</option>
+                                <option value="Month">Month</option>
+                                <option value="Other">Other</option>
+                                <option value="Pair">Pair</option>
+                                <option value="Package">Package</option>
+                                <option value="Pound">Pound</option>
+                                <option value="Quart">Quart</option>
+                                <option value="Ream">Ream</option>
+                                <option value="Roll">Roll</option>
+                                <option value="Sack">Sack</option>
+                                <option value="Set">Set</option>
+                                <option value="Thousand">Thousand</option>
+                                <option value="Yard">Yard</option>
+                                <option value="Year">Year</option>
                             </select>
                             <input class="formInput col-md-4" type="number" id="estPrice" step="0.01" required>
                         </div>
                     </div>
                     <div class="modal-footer">
+                        <button type="submit" class="btn btn-info" id="saveBtn" data-dismiss="modal">Save</button>
                         <button type="submit" class="btn btn-info" id="addBtn">Add</button>
-                        <button type="submit" class="btn btn-info" id="saveBtn">Save</button>
                         <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
                     </div>
                 </form>
@@ -130,20 +127,41 @@
 </html>
 
 <script>
+    var requestInfo;
     $(document).ready(function () {
-        $("#saveBtn").on("click", function () {
+        $("#submit").on("submit", function (e) {
+            e.preventDefault();
+            //If unit of measure selected, do not close modal, give error message.
             var modalInfo = {
                 itemName: $("#itemName").val().trim(),
                 quantity: $("#quant").val().trim(),
                 measureUnit: $("#measureUnit").val(),
                 estimatedPrice: $("#estPrice").val().trim()
             }
-            console.log("farts");
-            $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`)
-            $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`)
-            $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`)
-            $("#newItemPrice").append(`<p>Estimated Price: ${modalInfo.estimatedPrice}</p>`)
-            console.log("poo");
+            if (modalInfo.measureUnit === "") {
+                alert("Please select a unit of measurement")
+            } else {
+                console.log("farts");
+                $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`)
+                $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`)
+                $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`)
+                $("#newItemPrice").append(`<p>Estimated Price: ${modalInfo.estimatedPrice}</p>`)
+                console.log("poo");
+            }
+            $("#saveRequest").on("click", function () {
+                requestInfo = {
+                    dateNeeded: $("#dateNeeded").val().trim(),
+                    itemName: $("#itemName").val().trim(),
+                    quantity: $("#quant").val().trim(),
+                    measureUnit: $("#measureUnit").val(),
+                    estimatedPrice: $("#estPrice").val().trim(),
+                    taxRate: $("#taxRate").val().trim(),
+                    estimatedShipping: $("#estShip").val().trim(),
+                    justification: $("#justify").val().trim(),
+                    comments: $("#comments").val().trim()
+                }
+            })
         })
     })
+   //module.exports = requestInfo; 
 </script>
