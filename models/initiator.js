@@ -7,11 +7,11 @@ module.exports = function(sequelize, DataTypes) {
     name: DataTypes.STRING
   });
 
-  // Initiator.associate = function(models) {
-  //   Initiator.hasMany(models.purchaseRequest, {});
-  // };
-  //
-  // return Initiator;
+  Initiator.associate = function(models) {
+    Initiator.hasMany(models.purchaseRequest, {});
+  };
+
+  return Initiator;
 
   Initiator.sync();
 };
