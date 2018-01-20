@@ -1,5 +1,5 @@
 /**
-boilerplate code from Medium.com create a schema according to the docs and store it in an own folder
+boilerplate code from Medium.com create a schema according to the docs and store it in it's own folder
 the schema should describe the fields we have in our form and specify the data it can expect
 **/
 
