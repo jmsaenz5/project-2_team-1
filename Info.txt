@@ -15,11 +15,20 @@ Table requirements:
 	* Person_ID
 * Purchase_Requests (set up dummy data)
 	* PR_Number
-	* Description
+	* Item
+	* Quantity
+	* Unit_of_Measure
+	* Est_Amount
+	* Tax_Rate
+	* Estimated_Shipping
+	* Date_Needed
+	* Justification
+	* Comments
 	* Create_Date
 	* Vendor
 	* Status
 	* Complete_Date
+	* Created_By
 
 ## Login Screen /Henry/
 After login user will be taken to respective welcome page depending on user rights. Those three user right are as follows:
@@ -56,11 +65,7 @@ Page will populate a “Welcome ___________, you are logged in as an Admin” me
 * *Create Requests* 
 	* duplicate of ‘create requests’ page above
 * *Edit Requests*
-* *Track Request History*
 * *Authorize Requests*
-* *Withdraw Requests*
-* *Generate Purchase Order*
-* *Cancel Purchase Order*
 * *User Functionality*
 	* This page will ask if admin would like to add, disable or edit a user
 		* *Add* (will be a form with the following input fields)
