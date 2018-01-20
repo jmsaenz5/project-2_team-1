@@ -1,4 +1,6 @@
-# project-2_team-1
+![alt text](https://github.com/Sylvrleef/project-2_team-1/blob/master/public/img/TRAX_Logo.png "Logo Title")
+
+# Project 2 Team 1
 
 * **The requirements for Project #2 are as follows:**
 
@@ -20,7 +22,6 @@
 
   * Should use Handlebars for server-side templating
 
-Project 2 for Team 1
 
 Project Manager: Sade Browne
 Git Master: Jenny Usrey-Scott
