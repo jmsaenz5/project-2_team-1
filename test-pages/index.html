@@ -129,38 +129,33 @@
 <script>
     var requestInfo;
     $(document).ready(function () {
-        $("#submit").on("submit", function (e) {
+        $("#saveBtn").on("click", function (e) {
             e.preventDefault();
-            //If unit of measure selected, do not close modal, give error message.
             var modalInfo = {
                 itemName: $("#itemName").val().trim(),
                 quantity: $("#quant").val().trim(),
                 measureUnit: $("#measureUnit").val(),
                 estimatedPrice: $("#estPrice").val().trim()
             }
-            if (modalInfo.measureUnit === "") {
-                alert("Please select a unit of measurement")
-            } else {
-                console.log("farts");
-                $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`)
-                $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`)
-                $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`)
-                $("#newItemPrice").append(`<p>Estimated Price: ${modalInfo.estimatedPrice}</p>`)
-                console.log("poo");
+            console.log("farts");
+            $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`)
+            $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`)
+            $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`)
+            $("#newItemPrice").append(`<p>Estimated Price: ${modalInfo.estimatedPrice}</p>`)
+            console.log("poo");
+        })
+        $("#saveRequest").on("click", function () {
+            requestInfo = {
+                dateNeeded: $("#dateNeeded").val().trim(),
+                itemName: $("#itemName").val().trim(),
+                quantity: $("#quant").val().trim(),
+                measureUnit: $("#measureUnit").val(),
+                estimatedPrice: $("#estPrice").val().trim(),
+                taxRate: $("#taxRate").val().trim(),
+                estimatedShipping: $("#estShip").val().trim(),
+                justification: $("#justify").val().trim(),
+                comments: $("#comments").val().trim()
             }
-            $("#saveRequest").on("click", function () {
-                requestInfo = {
-                    dateNeeded: $("#dateNeeded").val().trim(),
-                    itemName: $("#itemName").val().trim(),
-                    quantity: $("#quant").val().trim(),
-                    measureUnit: $("#measureUnit").val(),
-                    estimatedPrice: $("#estPrice").val().trim(),
-                    taxRate: $("#taxRate").val().trim(),
-                    estimatedShipping: $("#estShip").val().trim(),
-                    justification: $("#justify").val().trim(),
-                    comments: $("#comments").val().trim()
-                }
-            })
         })
     })
    //module.exports = requestInfo; 
