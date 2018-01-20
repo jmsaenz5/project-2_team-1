@@ -1,21 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-            crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-            crossorigin="anonymous"></script>
-        <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-FzkHk/sZxl/KbNoSMiA0TgjqdV7ka8VPX/i/Nf2EyhH28i1EVaZ7uf2EEDBBHBo5"
-            crossorigin="anonymous">
-    <title>Document</title>
-</head>
-<body>
 <h2>User Functionality</h2>
+
 <button type="button" class="btn btn-info" id="addUser" data-toggle="modal" data-target="#addUserModal">Add User</button>
 
 <button type="button" class="btn btn-info" id="editUser" data-toggle="modal" data-target="#editUserModal">Edit/Disable User</button>
-</body>
-</html>
+
+<div id="addUserModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add User</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="row">
+                        <label class="col-md-4" for="userFirst">First Name</label>
+                        <label class="col-md-4" for="userLast">Last Name</label>
+                    </div>
+                    <div class="row">
+                        <input class="col-md-4" type="text" id="userFirst" name="userFirst">
+                        <input class="col-md-4" type="text" id="userLast" name="userLast">
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4" for="staffID">Staff ID</label>
+                        <label class="col-md-4" for="loginName">Login Name</label>
+                    </div>
+                    <div class="row">
+                        <input class="col-md-4" type="number" id="staffID" name="staffID">
+                        <input class="col-md-4" type="text" id="loginName" name="loginName">
+                    </div>
+                    <p>Update Date</p>
+                    <div class="row">
+                        <label for="dateFrom">From</label>
+                        <label for="dateTo">To</label>
+                    </div>
+                    <div class="row">
+                        <input class="col-md-4" type="date" id="dateFrom" name="dateFrom">
+                        <input class="col-md-4" type="date" id="dateTo" name="dateTo">
+                    </div>
+                    <div class="row">
+                        <label class="col-md-4" for="costCenter">Cost Center ID</label>
+                        <label class="col-md-4" for="locationCode">Location Code</label>
+                    </div>
+                    <div class="row">
+                        <input class="col-md-4" id="costCenter" name="costCenter" type="text">
+                        <input class="col-md-4" id="locationCode" name="locationCode" type="text">
+                    </div>
+                    <div class="row">
+                        <label for="personID" class="col-md-4">Person ID</label>
+                        <label for="securityRole" class="col-md-4">Security Role</label>
+                    </div>
+                    <div class="row">
+                        <input class="col-md-4" id="personID" name="personID" type="text">
+                        <select class="col-md-4" id="securityRole" name="securityRole">
+                            <option value="" selected>Select One</option>
+                            <option value="initiator">Initiator</option>
+                            <option value="reviewer">Reviewer</option>
+                            <option value="administrator">Administrator</option>
+                        </select>
+                    </div>
+                    <div class="row">
+                        <label for="accountStatus" class="col-md-4">Account Status</label>
+                    </div>
+                    <div class="row">
+                        <select class="col-md-4" id="accountStatus" name="accountStatus">
+                            <option value="" selected>Select One</option>
+                            <option value="any">Any</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

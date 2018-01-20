@@ -1,37 +1,36 @@
 <h2>Create Request</h2>
-<br>
+
 <form class="form-control">
     <div class="container">
-        <label for="dateNeeded">Date Needed </label>
-        <br>
-        <input type="date" id="dateNeeded" required>
-        <br>
-        <br>
-        <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>
-        <br>
-        <br> {{itemInfo}}
-        <br>
-        <br>
-        <label for="taxRate">Tax Rate</label>
-        <br>
-        <input type="number" id="taxRate" step="0.01">
-        <br>
-        <br>
-        <label for="estShip">Estimated Shipping</label>
-        <br>
-        <input type="number" id="estShip" step="0.01">
-        <br>
-        <br>
-        <label for="justify">Justification</label>
-        <br>
-        <textarea name="justify" id="justify" cols="50" rows="5" required></textarea>
-        <br>
-        <br>
-        <label for="comments">Comments</label>
-        <br>
-        <textarea name="comments" id="comments" cols="50" rows="5"></textarea>
-        <br>
-        <br>
+        <div class="row">
+            <label class="formLabel" for="dateNeeded">Date Needed</label>
+        </div>
+        <div class="row">
+            <input class="formInput" type="date" id="dateNeeded" required>
+        </div>
+        <div class="row">
+            <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>
+        </div>
+        <div class="row" id="modalInfo">
+        </div>
+        <div class="row">
+            <label class="formLabel col-md-4" for="taxRate">Tax Rate</label>
+            <label class="formLabel col-md-4" for="estShip">Estimated Shipping</label>
+        </div>
+        <div class="row">
+            <input class="formInput col-md-4" type="number" id="taxRate" step="0.01">
+            <input class="formInput col-md-4" type="number" id="estShip" step="0.01">
+        </div>
+        <div class="row">
+            <label class="formLabel col-md-4" for="justify">Justification</label>
+            <label class="formLabel col-md-4" for="comments">Comments</label>
+        </div>
+        <div class="row">
+            <textarea class="formInput" name="justify" id="justify" cols="45" rows="4" required></textarea>
+            <textarea class="formInput" name="comments" id="comments" cols="45" rows="4"></textarea>
+        </div>
+    </div>
+    <div class="row">
         <button type="submit" class="btn btn-info" id="saveRequest">Save Request</button>
     </div>
 </form>
@@ -45,53 +44,52 @@
             </div>
             <form>
                 <div class="modal-body">
-                    <label for="itemDesc">Item Description</label>
-                    <br>
-                    <textarea name="itemDesc" id="itemDesc" cols="30" rows="4"></textarea>
-                    <br>
-                    <br>
-                    <label for="quant">Quantity</label>
-                    <br>
-                    <input type="number" id="quant">
-                    <br>
-                    <br>
-                    <label for="measureUnit">Unit of Measurement</label>
-                    <br>
-                    <select name="measureUnit" id="measureUnit">
-                        <option value="" selected>Select a unit</option>
-                        <option value="bottle">Bottle</option>
-                        <option value="box">Box</option>
-                        <option value="carton">Carton</option>
-                        <option value="case">Case</option>
-                        <option value="dozen">Dozen</option>
-                        <option value="each">Each</option>
-                        <option value="foot">Foot</option>
-                        <option value="gallon">Gallon</option>
-                        <option value="gross">Gross</option>
-                        <option value="hour">Hour</option>
-                        <option value="hundred">Hundred</option>
-                        <option value="job">Job</option>
-                        <option value="length">Length</option>
-                        <option value="lot">Lot</option>
-                        <option value="month">Month</option>
-                        <option value="other">Other</option>
-                        <option value="pair">Pair</option>
-                        <option value="package">Package</option>
-                        <option value="pound">Pound</option>
-                        <option value="quart">Quart</option>
-                        <option value="ream">Ream</option>
-                        <option value="roll">Roll</option>
-                        <option value="sack">Sack</option>
-                        <option value="set">Set</option>
-                        <option value="thousand">Thousand</option>
-                        <option value="yard">Yard</option>
-                        <option value="year">Year</option>
-                    </select>
-                    <br>
-                    <br>
-                    <label for="estPrice">Estimated Dollar Amount</label>
-                    <br>
-                    <input type="number" id="estPrice" step="0.01">
+                    <div class="row">
+                        <label class="formLabel col-md-4" for="itemName">Item</label>
+                        <label class="formLabel col-md-4" for="quant">Quantity</label>
+                    </div>
+                    <div class="row">
+                        <input class="formInput col-md-4" type="text" name="itemName" id="itemName">
+                        <input class="formInput col-md-4" type="number" id="quant">
+                    </div>
+                    <div class="row">
+
+                        <label class="formLabel col-md-4" for="measureUnit">Unit of Measurement</label>
+                        <label class="formLabel col-md-4" for="estPrice">Estimated Dollar Amount</label>
+                    </div>
+                    <div class="row">
+                        <select class="formInput col-md-4" name="measureUnit" id="measureUnit">
+                            <option value="" selected>Select a unit</option>
+                            <option value="bottle">Bottle</option>
+                            <option value="box">Box</option>
+                            <option value="carton">Carton</option>
+                            <option value="case">Case</option>
+                            <option value="dozen">Dozen</option>
+                            <option value="each">Each</option>
+                            <option value="foot">Foot</option>
+                            <option value="gallon">Gallon</option>
+                            <option value="gross">Gross</option>
+                            <option value="hour">Hour</option>
+                            <option value="hundred">Hundred</option>
+                            <option value="job">Job</option>
+                            <option value="length">Length</option>
+                            <option value="lot">Lot</option>
+                            <option value="month">Month</option>
+                            <option value="other">Other</option>
+                            <option value="pair">Pair</option>
+                            <option value="package">Package</option>
+                            <option value="pound">Pound</option>
+                            <option value="quart">Quart</option>
+                            <option value="ream">Ream</option>
+                            <option value="roll">Roll</option>
+                            <option value="sack">Sack</option>
+                            <option value="set">Set</option>
+                            <option value="thousand">Thousand</option>
+                            <option value="yard">Yard</option>
+                            <option value="year">Year</option>
+                        </select>
+                        <input class="formInput col-md-4" type="number" id="estPrice" step="0.01">
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-info" id="addBtn">Add</button>
