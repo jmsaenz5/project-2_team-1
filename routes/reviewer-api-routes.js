@@ -5,8 +5,13 @@ module.exports = function(app) {
     db.Reviewer.findAll({
       where: {
         Reviewer: req.params.Reviewer
+<<<<<<< HEAD
       }
       include: [db.purchaseRequest, db.purchaseOrder]
+=======
+      },
+      include: [db.purchaseRequest]
+>>>>>>> 2b522e6fecd7694de35660408eced05a1b049fa4
     }).then(function(dbReviewer) {
       res.json(dbReviewer);
     });
@@ -33,3 +38,4 @@ module.exports = function(app) {
       res.json(dbReviewer);
     });
   });
+};
