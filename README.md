@@ -1,41 +1,18 @@
 ![alt text](https://github.com/Sylvrleef/project-2_team-1/blob/master/public/img/TRAX_Logo.png "Logo Title")
 
-<p align="center">
-Project 2 Team 1
-</p>
+For project two our team developed a purchase request and inventory tracking system called Trax. Trax allows entities to create, review and approve purchase requests as well as track and update their existing inventory. The application will include user authentication to assign different access levels to users (Initiator, Reviewer, Admin, etc.). Email notification functionality will also be present through the utilization of React.js.
 
-* **The requirements for Project #2 are as follows:**
+**The requirements for Project #2 were as follows:**
 
   * Must use a Node and Express Web Server
-
   * Must be backed by a MySQL Database with a Sequelize ORM  
-
   * Must have both GET and POST routes for retrieving and adding new data
-
   * Must be deployed using Heroku (with Data)
-
-  * Must utilize at least one new library, package, or technology that we haven’t discussed
-
+  * Must utilize at least one new library, package or technology
   * Must have a polished frontend / UI
-
   * Must have folder structure that meets MVC Paradigm
-
   * Must meet good quality coding standards (indentation, scoping, naming)
-
   * Should use Handlebars for server-side templating
 
-
-Project Manager: Sade Browne
-Git Master: Jenny Usrey-Scott
-Team: Jason Saenz, Anita Rodgerson, and Henry Dillard
-
-Inventory and Purchasing Tracking System
-
-1. We will have a user authentication in place.
-2. There will be different levels of access for users.
-3. There will be a database that keeps track of all of the items purchased.
-4. The program will create POs.
-5. The program will send out emails using React (new technology).
-6. Users will be able to pull up POs to see what was purchased on the PO.
-7. Users will also be able to look up items and see what PO they were purchased under.
-8. Jason is awesome.
+**Team**
+Sade Browne (Project Manager), Jenny Usrey-Scott (Git Master), Jason Saenz, Anita Rodgerson, Henry Dillard
