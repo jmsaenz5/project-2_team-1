@@ -2,86 +2,83 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4"
-        crossorigin="anonymous"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-FzkHk/sZxl/KbNoSMiA0TgjqdV7ka8VPX/i/Nf2EyhH28i1EVaZ7uf2EEDBBHBo5"
-        crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
-    <script src="../public/js/create-request.js" type="text/javascript"></script>
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.2/flatly/bootstrap.min.css" rel="stylesheet" integrity="sha384-FzkHk/sZxl/KbNoSMiA0TgjqdV7ka8VPX/i/Nf2EyhH28i1EVaZ7uf2EEDBBHBo5" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="../public/css/styles.css">
+  <script src="../public/js/create-request.js" type="text/javascript"></script>
+  <title>Document</title>
 </head>
 
 <body>
-    <div class="row">
-        <h2 class="col-md-4">Create Request</h2>
+  <div class="row">
+    <h2 class="col-md-4">Create Request</h2>
+  </div>
+  <form class="form-control">
+    <div class="container">
+      <div class="row">
+        <label class="formLabel" for="dateNeeded">Date Needed</label>
+      </div>
+      <div class="row">
+        <input class="formInput" type="date" id="dateNeeded" required>
+      </div>
+      <div class="row">
+        <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>
+      </div>
+      <!--Modal form info populates here-->
+      <div class="row" id="newItemName"></div>
+      <div class="row" id="newItemQuant"></div>
+      <div class="row" id="newItemMeasure"></div>
+      <div class="row" id="newItemPrice"></div>
+
+      <div class="row">
+        <label class="formLabel col-md-4" for="taxRate">Tax Rate</label>
+        <label class="formLabel col-md-4" for="estShip">Estimated Shipping</label>
+      </div>
+      <div class="row">
+        <input class="formInput col-md-4" type="number" id="taxRate" step="0.001">
+        <input class="formInput col-md-4" type="number" id="estShip" step="0.01">
+      </div>
+      <div class="row">
+        <label class="formLabel col-md-4" for="justify">Justification</label>
+        <label class="formLabel col-md-4" for="comments">Comments</label>
+      </div>
+      <div class="row">
+        <textarea class="formInput" name="justify" id="justify" cols="45" rows="4" required></textarea>
+        <textarea class="formInput" name="comments" id="comments" cols="45" rows="4"></textarea>
+      </div>
     </div>
-    <form class="form-control">
-        <div class="container">
-            <div class="row">
-                <label class="formLabel" for="dateNeeded">Date Needed</label>
-            </div>
-            <div class="row">
-                <input class="formInput" type="date" id="dateNeeded" required>
-            </div>
-            <div class="row">
-                <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>
-            </div>
-            <!--Modal form info populates here-->
-            <div class="row" id="newItemName"></div>
-            <div class="row" id="newItemQuant"></div>
-            <div class="row" id="newItemMeasure"></div>
-            <div class="row" id="newItemPrice"></div>
+    <button type="submit" class="btn btn-info" id="saveRequest">Save Request</button>
+  </form>
 
-            <div class="row">
-                <label class="formLabel col-md-4" for="taxRate">Tax Rate</label>
-                <label class="formLabel col-md-4" for="estShip">Estimated Shipping</label>
-            </div>
-            <div class="row">
-                <input class="formInput col-md-4" type="number" id="taxRate" step="0.001">
-                <input class="formInput col-md-4" type="number" id="estShip" step="0.01">
-            </div>
-            <div class="row">
-                <label class="formLabel col-md-4" for="justify">Justification</label>
-                <label class="formLabel col-md-4" for="comments">Comments</label>
-            </div>
-            <div class="row">
-                <textarea class="formInput" name="justify" id="justify" cols="45" rows="4" required></textarea>
-                <textarea class="formInput" name="comments" id="comments" cols="45" rows="4"></textarea>
-            </div>
+  <!--Modal-->
+  <div id="itemModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add Item</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-        <button type="submit" class="btn btn-info" id="saveRequest">Save Request</button>
-    </form>
+        <form id="submit">
+          <div class="modal-body">
+            <div class="row">
+              <label class="formLabel col-md-4" for="itemName">Item</label>
+              <label class="formLabel col-md-4" for="quant">Quantity</label>
+            </div>
+            <div class="row">
+              <input class="formInput col-md-4" type="text" name="itemName" id="itemName" required>
+              <input class="formInput col-md-4" type="number" id="quant" required>
+            </div>
+            <div class="row">
 
-    <!--Modal-->
-    <div id="itemModal" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Item</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <form id="submit">
-                    <div class="modal-body">
-                        <div class="row">
-                            <label class="formLabel col-md-4" for="itemName">Item</label>
-                            <label class="formLabel col-md-4" for="quant">Quantity</label>
-                        </div>
-                        <div class="row">
-                            <input class="formInput col-md-4" type="text" name="itemName" id="itemName" required>
-                            <input class="formInput col-md-4" type="number" id="quant" required>
-                        </div>
-                        <div class="row">
-
-                            <label class="formLabel col-md-4" for="measureUnit">Unit of Measurement</label>
-                            <label class="formLabel col-md-4" for="estPrice">Estimated Dollar Amount</label>
-                        </div>
-                        <div class="row">
-                            <select class="formInput col-md-4 validate" name="measureUnit" id="measureUnit" required="true">
+              <label class="formLabel col-md-4" for="measureUnit">Unit of Measurement</label>
+              <label class="formLabel col-md-4" for="estPrice">Estimated Dollar Amount</label>
+            </div>
+            <div class="row">
+              <select class="formInput col-md-4 validate" name="measureUnit" id="measureUnit" required="true">
                                 <option value="" selected>Select a Unit</option>
                                 <option value="Bottle">Bottle</option>
                                 <option value="Box">Box</option>
@@ -111,18 +108,48 @@
                                 <option value="Yard">Yard</option>
                                 <option value="Year">Year</option>
                             </select>
-                            <input class="formInput col-md-4" type="number" id="estPrice" step="0.01" required>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-info" id="saveBtn" data-dismiss="modal">Save</button>
-                        <button type="submit" class="btn btn-info" id="addBtn">Add</button>
-                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
-                    </div>
-                </form>
+              <input class="formInput col-md-4" type="number" id="estPrice" step="0.01" required>
             </div>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-info" id="saveBtn" data-dismiss="modal">Save</button>
+            <button type="submit" class="btn btn-info" id="addBtn">Add</button>
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </body>
+<script type="text/javascript">
+  var requestInfo;
+  $(document).ready(function() {
+    $("#saveBtn").on("click", function(e) {
+      e.preventDefault();
+      var modalInfo = {
+        itemName: $("#itemName")
+          .val()
+          .trim(),
+        quantity: $("#quant")
+          .val()
+          .trim(),
+        measureUnit: $("#measureUnit").val(),
+        estimatedPrice: $("#estPrice")
+          .val()
+          .trim()
+      };
+      console.log("farts");
+      $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`);
+      $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`);
+      $("#newItemMeasure").append(
+        `<p>Unit of Measure: ${modalInfo.measureUnit}</p>`
+      );
+      $("#newItemPrice").append(
+        `<p>Estimated Price: $${modalInfo.estimatedPrice}</p>`
+      );
+      console.log("poo");
+    });
+
 
 </html>
+
