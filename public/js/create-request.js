@@ -10,7 +10,7 @@ $(document).ready(function() {
         quantity: $("#quant").val().trim(),
         measureUnit: $("#measureUnit").val(),
         itemPrice: $("#estPrice").val().trim(),
-        itemTotal: $("#quant").val() * $("#estPrice").val()
+        itemTotal: $("#quant").val() * $("#estPrice").val().trim()
       }
       console.log(modalInfo.itemTotal);
       $("#newModalInfo").append(`<tr><td>${modalInfo.itemName}</td><td>${modalInfo.quantity}</td><td>${modalInfo.measureUnit}</td><td>$${modalInfo.itemPrice}</td><td>$${modalInfo.itemTotal}</td></tr>`);
@@ -27,8 +27,10 @@ requestInfo = {
   measureUnit: $("#measureUnit").val(),
   itemPrice: $("#estPrice").val().trim(),
   itemTotal: modalInfo.itemTotal,
+  // subTotal:
   taxRate: $("#taxRate").val().trim(),
   estimatedShipping: $("#estShip").val().trim(),
+  purchaseRequestTotal: (modalInfo.itemTotal * $("#taxRate").val().trim()) + $("estShip").val().trim(),
   justification: $("#justify").val().trim(),
   comments: $("#comments").val().trim()
 };
