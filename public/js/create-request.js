@@ -1,3 +1,5 @@
+import { totalmem } from "os";
+
 var requestInfo;
 $(document).ready(function() {
   $("#saveBtn").on("click", function(e) {
@@ -7,7 +9,7 @@ $(document).ready(function() {
       quantity: $("#quant").val().trim(),
       measureUnit: $("#measureUnit").val(),
       estimatedPrice: $("#estPrice").val().trim(),
-      totalPrice: this.quantity * this.estimatedPrice
+      totalPrice: totalPrice(this.quantity, this.estimatedPrice)
     };
     console.log("farts");
     $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`);
