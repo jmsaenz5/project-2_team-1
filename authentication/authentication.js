@@ -1,15 +1,16 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("Connected to Mongo Database");
+});
 // add body-parser for parsing incoming request bodies in a middelware
 // create a POST route for sending data to server 
 // store the values of the filled out form & store the data in the db with the schema..
 
 // DONE IN USER FUNCTIONALITY ON ADMIN RIGHTS
-Last_Name
-  * First_Name
-  * Staff_ID
-  * Security_Role
-  * AD_Login
-  * Location_Code
-  * Person_ID
 
 app.post("/admin/adduser", function(req, res) {
 
