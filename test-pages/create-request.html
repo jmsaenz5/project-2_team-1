@@ -29,10 +29,31 @@
         <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>
       </div>
       <!--Modal form info populates here-->
+      <table id="itemTable" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Unit of Measurement</th>
+            <th>Price Per</th>
+            <th>Item Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
       <div class="row" id="newItemName"></div>
       <div class="row" id="newItemQuant"></div>
       <div class="row" id="newItemMeasure"></div>
       <div class="row" id="newItemPrice"></div>
+      <div class="row" id="newTotalPrice"></div>
 
       <div class="row">
         <label class="formLabel col-md-4" for="taxRate">Tax Rate</label>
@@ -123,5 +144,3 @@
 </body>
 
 </html>
-
-
