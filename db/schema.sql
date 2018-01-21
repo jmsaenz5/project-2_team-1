@@ -19,3 +19,19 @@ CREATE TABLE PR_Request (
     Complete_Date date,
     Created_By varchar(100) not null
 );
+
+INSERT INTO PR_Request (PR_Number, Item, Quantity, Unit_of_Measure, Est_Amount, Tax_Rate, Estimated_Shipping, Date_Needed, Justification, Comments, Vendor, Status, Complete_Date, Created_By)
+VALUES (value1, value2, value3, ...)
+
+CREATE TABLE User_DB (
+    Last_Name varchar(100) not null,
+    First_Name varchar(100) not null,
+    Staff_ID integer not null,
+    Security Role varchar(100) not null,
+    AD_Login varchar(100) not null,
+    Location_Code integer not null,
+    Email varchar(200) not null
+);
+
+INSERT INTO PR_Request ()
+VALUES (value1, value2, value3, ...)
