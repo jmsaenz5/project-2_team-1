@@ -5,9 +5,6 @@ var requestInfo;
 $(document).ready(function() {
   $("#saveBtn").on("click", function(e) {
     e.preventDefault();
-    function totalPrice(x, y) {
-        a * b;
-    }
     var modalInfo = {
       itemName: $("#itemName").val().trim(),
       quantity: $("#quant").val().trim(),
