@@ -1,21 +1,22 @@
+//import { totalmem } from "os";
+
 var requestInfo;
 
 $(document).ready(function() {
   $("#saveBtn").on("click", function(e) {
     e.preventDefault();
+    function totalPrice(x, y) {
+        a * b;
+    }
     var modalInfo = {
       itemName: $("#itemName").val().trim(),
       quantity: $("#quant").val().trim(),
       measureUnit: $("#measureUnit").val(),
       estimatedPrice: $("#estPrice").val().trim(),
-      totalPrice: this.quantity * this.estimatedPrice
+      totalPrice: totalPrice(this.quantity, this.estimatedPrice)
     };
-    console.log("farts");
-    $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`);
-    $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`);
-    $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`);
-    $("#newItemPrice").append(`<p>Estimated Price: $${modalInfo.estimatedPrice}</p>`);
-    $("#newTotalPrice").append(`<p>Total Price: ${modalInfo.totalPrice}</p>`);
+    console.log(modalInfo.totalPrice);
+    $("#newModalInfo").append(`<tr><td>${modalInfo.itemName}</td><td>${modalInfo.quantity}</td><td>${modalInfo.measureUnit}</td><td>$${modalInfo.estimatedPrice}</td><td>$${modalInfo.totalPrice}</td></tr>`);
     console.log("poo");
   });
   $("#saveRequest").on("click", function() {
@@ -34,4 +35,4 @@ $(document).ready(function() {
   });
 });
 
-module.exports = requestInfo;
+//module.exports = requestInfo;
