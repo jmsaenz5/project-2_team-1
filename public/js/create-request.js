@@ -1,6 +1,7 @@
 import { totalmem } from "os";
 
 var requestInfo;
+
 $(document).ready(function() {
   $("#saveBtn").on("click", function(e) {
     e.preventDefault();
@@ -14,12 +15,9 @@ $(document).ready(function() {
     console.log("farts");
     $("#newItemName").append(`<p>Item Name: ${modalInfo.itemName}</p>`);
     $("#newItemQuant").append(`<p>Quantity: ${modalInfo.quantity}</p>`);
-    $("#newItemMeasure").append(
-      `<p>Unit of Measure: ${modalInfo.measureUnit}</p>`
-    );
-    $("#newItemPrice").append(
-      `<p>Estimated Price: $${modalInfo.estimatedPrice}</p>`
-    );
+    $("#newItemMeasure").append(`<p>Unit of Measure: ${modalInfo.measureUnit}</p>`);
+    $("#newItemPrice").append(`<p>Estimated Price: $${modalInfo.estimatedPrice}</p>`);
+    $("#newTotalPrice").append(`<p>Total Price: ${modalInfo.totalPrice}</p>`);
     console.log("poo");
   });
   $("#saveRequest").on("click", function() {
@@ -37,4 +35,5 @@ $(document).ready(function() {
     };
   });
 });
+
 module.exports = requestInfo;
