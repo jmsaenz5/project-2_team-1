@@ -150,38 +150,6 @@
       console.log("poo");
     });
 
-})
-    $("#saveRequest").on("click", function() {
-      requestInfo = {
-        dateNeeded: $("#dateNeeded")
-          .val()
-          .trim(),
-        itemName: $("#itemName")
-          .val()
-          .trim(),
-        quantity: $("#quant")
-          .val()
-          .trim(),
-        measureUnit: $("#measureUnit").val(),
-        estimatedPrice: $("#estPrice")
-          .val()
-          .trim(),
-        taxRate: $("#taxRate")
-          .val()
-          .trim(),
-        estimatedShipping: $("#estShip")
-          .val()
-          .trim(),
-        justification: $("#justify")
-          .val()
-          .trim(),
-        comments: $("#comments")
-          .val()
-          .trim()
-      };
-      module.exports = requestInfo;
-    });
-  });
-</script>
 
 </html>
+
