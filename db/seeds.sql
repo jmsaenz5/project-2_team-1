@@ -443,11 +443,93 @@ VALUES (
 	20180214, 
 	'Justification of item', 
 	'Comments about item',
-	20171202,  
-	'Chevron', 
+	20170930,  
+	'Dell', 
 	'approved',
-	'no date until approved', 
+	20171013, 
+	'Sade Brown',
+	);
+
+INSERT INTO PR_Request (
+	PR_Number, 
+	Item, 
+	Quantity, 
+	Unit_of_Measure, 
+	Item_Price,
+	Item_Total, 
+	Tax_Rate, 
+	Estimated_Shipping,
+	Sub_Total,
+	Grand_Total,
+	Date_Needed, 
+	Justification, 
+	Comments, 
+	Vendor, 
+	Status, 
+	Complete_Date, 
+	Created_By
+	)
+
+VALUES (
+	10, 
+	'Description goes here', 
+	2, 
+	'lot', 
+	230.91,
+	230.91, 
+	8.25, 
+	30.00,
+	163.35,
+	163.35,
+	20170730, 
+	'Justification of item', 
+	'Comments about item',
+	20170930,  
+	'Amazon', 
+	'approved',
+	20170810, 
 	'Henry Dillard',
+	);
+
+INSERT INTO PR_Request (
+	PR_Number, 
+	Item, 
+	Quantity, 
+	Unit_of_Measure, 
+	Item_Price,
+	Item_Total, 
+	Tax_Rate, 
+	Estimated_Shipping,
+	Sub_Total,
+	Grand_Total,
+	Date_Needed, 
+	Justification, 
+	Comments, 
+	Vendor, 
+	Status, 
+	Complete_Date, 
+	Created_By
+	)
+
+VALUES (
+	11, 
+	'Description goes here', 
+	6, 
+	'set', 
+	765.41,
+	765.41, 
+	8.25, 
+	30.00,
+	163.35,
+	163.35,
+	20180203, 
+	'Justification of item', 
+	'Comments about item',
+	20170908,  
+	'Apple', 
+	'approved',
+	20170917, 
+	'Anita Rodgerson',
 	);
 
 
@@ -506,4 +588,24 @@ VALUES (
 	'SaenzJ',
 	11,
 	'saenzj@trax.com'
+	);
+
+INSERT INTO User_DB (
+	Last_Name, 
+	First_Name, 
+	Staff_ID, 
+	Security_Role, 
+	AD_Login, 
+	Location_Code, 
+	Email
+	);
+
+VALUES (
+	'Rodgerson', 
+	'Anita', 
+	34521,
+	'initiator',
+	'RodgersonA',
+	10,
+	'aadk@runbox.com'
 	);
