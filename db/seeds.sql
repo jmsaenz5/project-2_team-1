@@ -560,6 +560,7 @@ INSERT INTO User_DB (
 	Location_Code, 
 	Email
 	);
+
 VALUES (
 	'Browne', 
 	'Sade', 
@@ -608,4 +609,64 @@ VALUES (
 	'RodgersonA',
 	10,
 	'aadk@runbox.com'
+	);
+
+INSERT INTO User_DB (
+	Last_Name, 
+	First_Name, 
+	Staff_ID, 
+	Security_Role, 
+	AD_Login, 
+	Location_Code, 
+	Email
+	);
+
+VALUES (
+	'Usrey-Scott', 
+	'Jenny', 
+	33451,
+	'admin',
+	'Usrey-ScottJ',
+	11,
+	'sylvrleef@gmail.com'
+	);
+
+INSERT INTO User_DB (
+	Last_Name, 
+	First_Name, 
+	Staff_ID, 
+	Security_Role, 
+	AD_Login, 
+	Location_Code, 
+	Email
+	);
+
+VALUES (
+	'Dillard', 
+	'Henry', 
+	22345,
+	'reviewer',
+	'DillardH',
+	13,
+	'hmd1987@gmail.com'
+	);
+
+INSERT INTO User_DB (
+	Last_Name, 
+	First_Name, 
+	Staff_ID, 
+	Security_Role, 
+	AD_Login, 
+	Location_Code, 
+	Email
+	);
+
+VALUES (
+	'White', 
+	'Jack', 
+	23451,
+	'reviewer',
+	'WhiteJ',
+	13,
+	'whitej@trax.com'
 	);
