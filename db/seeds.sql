@@ -670,3 +670,25 @@ VALUES (
 	13,
 	'whitej@trax.com'
 	);
+
+INSERT INTO User_DB (
+	Last_Name, 
+	First_Name, 
+	Staff_ID, 
+	Security_Role, 
+	AD_Login, 
+	Location_Code, 
+	Email
+	);
+
+VALUES (
+	'Green', 
+	'Amanda', 
+	54123,
+	'reviewer',
+	'GreenA',
+	12,
+	'greena@trax.com'
+	);
+
+
