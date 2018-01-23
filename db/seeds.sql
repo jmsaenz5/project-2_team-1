@@ -6,6 +6,10 @@ DROP DATABASE IF EXISTS project2;
 
 CREATE DATABASE project2;
 
+/*
+PR Request Section
+*/
+
 CREATE TABLE PR_Request (
     PR_Number integer AUTO_INCREMENT not null,
     Item varchar(400) not null,
@@ -66,7 +70,7 @@ VALUES (
 	'Apple', 
 	'approved', 
 	20170815,
-	'Sade Browne'
+	'Sade Browne',
 	);
 
 INSERT INTO PR_Request (
@@ -106,9 +110,102 @@ VALUES (
 	20170906,  
 	'Verizon', 
 	'approved',
-	20170815 
-	'Sade Browne'
+	20170815, 
+	'Sade Browne',
 	);
+
+INSERT INTO PR_Request (
+	PR_Number, 
+	Item, 
+	Quantity, 
+	Unit_of_Measure, 
+	Item_Price,
+	Item_Total, 
+	Tax_Rate, 
+	Estimated_Shipping,
+	Sub_Total,
+	Grand_Total,
+	Date_Needed, 
+	Justification, 
+	Comments, 
+	Vendor, 
+	Status, 
+	Complete_Date, 
+	Created_By
+	)
+
+VALUES (
+	3, 
+	'Description goes here', 
+	3, 
+	'case', 
+	1111.45,
+	1111.45, 
+	8.25, 
+	30.00,
+	163.35,
+	163.35,
+	/*
+	why is the number below the same as the one
+	for value 2 in the spreadsheet?
+	*/
+	20180203, 
+	'Justification of item', 
+	'Comments about item',
+	20170806,  
+	'Ford', 
+	'approved',
+	20170813, 
+	'Jason Saenz',
+	);
+
+INSERT INTO PR_Request (
+	PR_Number, 
+	Item, 
+	Quantity, 
+	Unit_of_Measure, 
+	Item_Price,
+	Item_Total, 
+	Tax_Rate, 
+	Estimated_Shipping,
+	Sub_Total,
+	Grand_Total,
+	Date_Needed, 
+	Justification, 
+	Comments, 
+	Vendor, 
+	Status, 
+	Complete_Date, 
+	Created_By
+	)
+
+VALUES (
+	4, 
+	'Description goes here', 
+	4, 
+	'case', 
+	876.23,
+	876.23, 
+	8.25, 
+	30.00,
+	163.35,
+	163.35,
+	20180103, 
+	'Justification of item', 
+	'Comments about item',
+	20171203,  
+	'Microsoft', 
+	'pending',
+	'no date until approved', 
+	'Jason Saenz',
+	);
+
+
+
+/*
+THIS IS THE END OF THE PR REQUEST SECTION
+*/
+
 /*
 User DB Section
 */
