@@ -44,6 +44,7 @@ INSERT INTO PR_Request (
 	Complete_Date, 
 	Created_By
 	)
+
 VALUES (
 	1, 
 	'Description goes here', 
@@ -53,17 +54,64 @@ VALUES (
 	150.90, 
 	8.25, 
 	30.00,
+	/*
+	what is the purpose of 163.35?
+	*/
 	163.35,
 	163.35,
 	20180203, 
 	'Justification of item', 
-	'Comments about item',  
+	'Comments about item',
+	20170809,  
 	'Apple', 
 	'approved', 
-	20170815, 
+	20170815,
 	'Sade Browne'
 	);
 
+INSERT INTO PR_Request (
+	PR_Number, 
+	Item, 
+	Quantity, 
+	Unit_of_Measure, 
+	Item_Price,
+	Item_Total, 
+	Tax_Rate, 
+	Estimated_Shipping,
+	Sub_Total,
+	Grand_Total,
+	Date_Needed, 
+	Justification, 
+	Comments, 
+	Vendor, 
+	Status, 
+	Complete_Date, 
+	Created_By
+	)
+
+VALUES (
+	2, 
+	'Description goes here', 
+	2, 
+	'box', 
+	123.33,
+	123.33, 
+	8.25, 
+	30.00,
+	163.35,
+	163.35,
+	20180203, 
+	'Justification of item', 
+	'Comments about item',
+	20170906,  
+	'Verizon', 
+	'approved',
+	20170815 
+	'Sade Browne'
+	);
+/*
+User DB Section
+*/
 CREATE TABLE User_DB (
     Last_Name varchar(100) not null,
     First_Name varchar(100) not null,
@@ -74,7 +122,7 @@ CREATE TABLE User_DB (
     Email varchar(200) not null
 );
 
-INSERT INTO PR_Request (
+INSERT INTO User_DB (
 	Last_Name, 
 	First_Name, 
 	Staff_ID, 
@@ -91,4 +139,24 @@ VALUES (
 	'BrowneS',
 	10,
 	'sbribrowne@gmail.com'
+	);
+
+INSERT INTO User_DB (
+	Last_Name, 
+	First_Name, 
+	Staff_ID, 
+	Security_Role, 
+	AD_Login, 
+	Location_Code, 
+	Email
+	);
+
+VALUES (
+	'Saenz', 
+	'Jason', 
+	54321,
+	'admin',
+	'SaenzJ',
+	11,
+	'saenzj@trax.com'
 	);
