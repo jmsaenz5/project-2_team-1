@@ -72,7 +72,7 @@ VALUES (
 	'Apple', 
 	'approved', 
 	20170815,
-	'Sade Browne',
+	'Sade Browne'
 	);
 
 INSERT INTO PR_Request (
@@ -113,7 +113,7 @@ VALUES (
 	'Verizon', 
 	'approved',
 	20170815, 
-	'Sade Browne',
+	'Sade Browne'
 	);
 
 INSERT INTO PR_Request (
@@ -158,7 +158,7 @@ VALUES (
 	'Ford', 
 	'approved',
 	20170813, 
-	'Jason Saenz',
+	'Jason Saenz'
 	);
 
 INSERT INTO PR_Request (
@@ -199,7 +199,7 @@ VALUES (
 	'Microsoft', 
 	'pending',
 	'no date until approved', 
-	'Jenny Usrey-Scott',
+	'Jenny Usrey-Scott'
 	);
 
 INSERT INTO PR_Request (
@@ -240,7 +240,7 @@ VALUES (
 	'Shell', 
 	'pending',
 	'no date until approved', 
-	'Jenny Usrey-Scott',
+	'Jenny Usrey-Scott'
 	);
 
 INSERT INTO PR_Request (
@@ -281,7 +281,7 @@ VALUES (
 	'Samsung', 
 	'approved',
 	20171125, 
-	'Anita Rodgerson',
+	'Anita Rodgerson'
 	);
 
 INSERT INTO PR_Request (
@@ -322,7 +322,7 @@ VALUES (
 	'Ford', 
 	'approved',
 	20171210, 
-	'Anita Rodgerson',
+	'Anita Rodgerson'
 	);
 
 INSERT INTO PR_Request (
@@ -367,7 +367,7 @@ VALUES (
 	'Ford', 
 	'approved',
 	20171112, 
-	'Jason Saenz',
+	'Jason Saenz'
 	);
 
 INSERT INTO PR_Request (
@@ -408,7 +408,7 @@ VALUES (
 	'Chevron', 
 	'approved',
 	'no date until approved', 
-	'Henry Dillard',
+	'Henry Dillard'
 	);
 
 INSERT INTO PR_Request (
@@ -449,7 +449,7 @@ VALUES (
 	'Dell', 
 	'approved',
 	20171013, 
-	'Sade Brown',
+	'Sade Brown'
 	);
 
 INSERT INTO PR_Request (
@@ -490,7 +490,7 @@ VALUES (
 	'Amazon', 
 	'approved',
 	20170810, 
-	'Henry Dillard',
+	'Henry Dillard'
 	);
 
 INSERT INTO PR_Request (
@@ -531,7 +531,7 @@ VALUES (
 	'Apple', 
 	'approved',
 	20170917, 
-	'Anita Rodgerson',
+	'Anita Rodgerson'
 	);
 
 
