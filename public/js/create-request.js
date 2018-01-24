@@ -1,39 +1,73 @@
 //import { totalmem } from "os";
 
 var requestInfo;
-
+//If there's time: Add a checkbox and add/delete buttons next to each table item
 $(document).ready(function() {
   $("#saveBtn").on("click", function(e) {
-      e.preventDefault();
-      var modalInfo = {
+    e.preventDefault();
+    var modalInfo = {
+      itemName: $("#itemName").val().trim(),
+      quantity: $("#quant").val().trim(),
+      measureUnit: $("#measureUnit").val(),
+      itemPrice: $("#estPrice").val().trim(),
+      itemTotal:
+        $("#quant").val() * $("#estPrice").val().trim()
+    };
+    console.log(modalInfo.itemTotal);
+    $("#newModalInfo").append(
+      `<tr><td>${modalInfo.itemName}</td><td>${modalInfo.quantity}</td><td>${
+        modalInfo.measureUnit
+      }</td><td>$${modalInfo.itemPrice}</td><td>$${
+        modalInfo.itemTotal
+      }</td></tr>`
+    );
+    console.log("poo");
+    $("#itemName").val("");
+    $("#quant").val("");
+    $("#measureUnit").val("");
+    $("#estPrice").val("");
+  });
+
+  $("#addBtn").on("click", function(e) {
+    e.preventDefault();
+    var modalInfo = {
+      itemName: $("#itemName").val().trim(),
+      quantity: $("#quant").val().trim(),
+      measureUnit: $("#measureUnit").val(),
+      estimatedPrice: $("#estPrice").val().trim(),
+      totalPrice: $("#quant").val() * $("#estPrice").val().trim()
+    };
+    console.log("shit dammit");
+    $("#newModalInfo").append(`<tr class="tableItems"><td>${modalInfo.itemName}</td><td class="tableQuant">${modalInfo.quantity}</td><td class="tableUnit">${modalInfo.measureUnit}</td><td class="tablePrice">$${modalInfo.estimatedPrice}</td><td class="tableTotal">$${modalInfo.totalPrice}</td></tr>`);
+    console.log("poo-gas");
+      
+
+    $("#itemName").val("");
+    $("#quant").val("");
+    $("#measureUnit").val("");
+    $("#estPrice").val("");
+  });
+  //var blahBlah = requestInfo.itemInfo[i];
+  $("#saveRequest").on("click", function() {
+    requestInfo = {
+      dateNeeded: $("#dateNeeded").val().trim(),
+      itemInfo: {
         itemName: $("#itemName").val().trim(),
         quantity: $("#quant").val().trim(),
         measureUnit: $("#measureUnit").val(),
         itemPrice: $("#estPrice").val().trim(),
-        itemTotal: $("#quant").val() * $("#estPrice").val().trim()
-      }
-      console.log(modalInfo.itemTotal);
-      $("#newModalInfo").append(`<tr><td>${modalInfo.itemName}</td><td>${modalInfo.quantity}</td><td>${modalInfo.measureUnit}</td><td>$${modalInfo.itemPrice}</td><td>$${modalInfo.itemTotal}</td></tr>`);
-      console.log("poo");
+        itemTotal: modalInfo.itemTotal
+      },
+      // subTotal:
+      taxRate: $("#taxRate").val().trim(),
+      estimatedShipping: $("#estShip").val().trim(),
+      purchaseRequestTotal:
+      //Order of operations?  
+      modalInfo.itemTotal *
+          $("#taxRate").val().trim() + $("estShip").val().trim(),
+      justification: $("#justify").val().trim(),
+      comments: $("#comments").val().trim()
+    };
+    $.post("./api/Initiator", requestInfo);
   });
 });
-
-
-$("#saveRequest").on("click", function() {
-requestInfo = {
-  dateNeeded: $("#dateNeeded").val().trim(),
-  itemName: $("#itemName").val().trim(),
-  quantity: $("#quant").val().trim(),
-  measureUnit: $("#measureUnit").val(),
-  itemPrice: $("#estPrice").val().trim(),
-  itemTotal: modalInfo.itemTotal,
-  // subTotal:
-  taxRate: $("#taxRate").val().trim(),
-  estimatedShipping: $("#estShip").val().trim(),
-  purchaseRequestTotal: (modalInfo.itemTotal * $("#taxRate").val().trim()) + $("estShip").val().trim(),
-  justification: $("#justify").val().trim(),
-  comments: $("#comments").val().trim()
-};
-});
-
-//module.exports = requestInfo;
