@@ -6,6 +6,8 @@ DROP DATABASE IF EXISTS project2;
 
 CREATE DATABASE project2;
 
+USE DATABASE project2;
+
 /*
 PR Request Section
 */
@@ -24,7 +26,7 @@ CREATE TABLE PR_Request (
     Comments varchar(600),
     Create_Date date not null,
     Vendor varchar(100) not null,
-    Status varchar(50) not null,
+    StatusQ varchar(50) not null,
     Complete_Date date,
     Created_By varchar(100) not null
 );
