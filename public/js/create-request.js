@@ -38,7 +38,7 @@ $(document).ready(function() {
       totalPrice: $("#quant").val() * $("#estPrice").val().trim()
     };
     console.log("shit dammit");
-    $("#newModalInfo").append(`<tr class="tableItems"><td>${modalInfo.itemName}</td><td class="tableQuant">${modalInfo.quantity}</td><td class="tableUnit">${modalInfo.measureUnit}</td><td class="tablePrice">$${modalInfo.estimatedPrice}</td><td class="tableTotal">$${modalInfo.totalPrice}</td></tr>`);
+    $("#newModalInfo").append(`<tr class="allRows"><td class="tableItems">${modalInfo.itemName}</td><td class="tableQuant">${modalInfo.quantity}</td><td class="tableUnit">${modalInfo.measureUnit}</td><td class="tablePrice">$${modalInfo.estimatedPrice}</td><td class="tableTotal">$${modalInfo.totalPrice}</td></tr>`);
     console.log("poo-gas");
       
 
@@ -46,9 +46,27 @@ $(document).ready(function() {
     $("#quant").val("");
     $("#measureUnit").val("");
     $("#estPrice").val("");
+    var individualItems;
+  var eachItem = document.querySelectorAll("#itemTable .tableItems");
+  var allItems = $(".tableItems").html();
+  console.log(allItems);
+  var allQuant = document.getElementsByClassName("tableQuant");
+  var allUnit = document.getElementsByClassName("tableUnit");
+  var allPrice = document.getElementsByClassName("tablePrice");
+  var allTotal = document.getElementsByClassName("tableTotal");
+  for(var i=0; i<eachItem.length; i+=1) {
+    individualItems = {
+      itemName: allItems,
+      quantity: allQuant,
+      measureUnit: allUnit,
+      itemPrice: allPrice,
+      itemTotal: allItems
+    };
+    console.log(allItems[i], allQuant[i], allUnit[i], allPrice[i], allTotal[i]);
+  }
   });
-  //var blahBlah = requestInfo.itemInfo[i];
-  $("#saveRequest").on("click", function() {
+  
+  /*$("#saveRequest").on("click", function() {
     requestInfo = {
       dateNeeded: $("#dateNeeded").val().trim(),
       itemInfo: {
@@ -69,5 +87,5 @@ $(document).ready(function() {
       comments: $("#comments").val().trim()
     };
     $.post("./api/Initiator", requestInfo);
-  });
+  });*/
 });
