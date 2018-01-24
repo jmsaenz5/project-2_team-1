@@ -46,7 +46,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -90,7 +90,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -131,7 +131,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -176,7 +176,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -217,7 +217,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -258,7 +258,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -299,7 +299,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -340,7 +340,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -385,7 +385,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -426,7 +426,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -467,7 +467,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
@@ -508,7 +508,7 @@ INSERT INTO PR_Request (
 	Justification, 
 	Comments, 
 	Vendor, 
-	Status, 
+	StatusQ, 
 	Complete_Date, 
 	Created_By
 	)
