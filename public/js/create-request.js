@@ -62,6 +62,8 @@ $(document).ready(function() {
       itemPrice: allPrice,
       itemTotal: allItems
     };
+    //Try stringify
+    
     console.log(allItems[i], allQuant[i], allUnit[i], allPrice[i], allTotal[i]);
   }
   });
