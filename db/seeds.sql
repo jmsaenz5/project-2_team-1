@@ -1,26 +1,31 @@
 /*
 moving all of Sade's code from schema to here now
 */
-
-DROP DATABASE IF EXISTS project2;
+/*
+i added most of the PR Requests and DB Names
+/*
+me and Anita have been fine-tuning this shizzle
+*/
+/*
+this would not be possible without Anita, Sade, & Jennifer (the T.A.) thanks a bunch
+*/
+DROP DATABASE if exists project2;
 
 CREATE DATABASE project2;
 
-USE DATABASE project2;
+USE project2;
 
-/*
-PR Request Section
-*/
+DROP TABLE PR_Request;
 
 CREATE TABLE PR_Request (
-    PR_Number integer AUTO_INCREMENT not null,
+    PR_Number int AUTO_INCREMENT not null,
     Item varchar(400) not null,
-    Quantity integer not null,
+    Quantity int not null,
     Unit_of_Measure varchar(100) not null,
-    Est_Amount integer not null,
-    Total_Amount integer not null,
-    Tax_Rate integer not null,
-    Estimated_Shipping integer not null,
+    Est_Amount DECIMAL(10,2) int not null,
+    Total_Amount DECIMAL(10,2) int not null,
+    Tax_Rate DECIMAL(5,2) int not null,
+    Estimated_Shipping int not null,
     Date_Needed date not null,
     Justification varchar(500) not null,
     Comments varchar(600),
@@ -28,28 +33,29 @@ CREATE TABLE PR_Request (
     Vendor varchar(100) not null,
     StatusQ varchar(50) not null,
     Complete_Date date,
-    Created_By varchar(100) not null
+    Created_By varchar(100) not null,
+    PRIMARY KEY (PR_Number)
 );
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
-
+    
 VALUES (
 	1, 
 	'Description goes here', 
@@ -70,24 +76,24 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
-
+    
 VALUES (
 	2, 
 	'Description goes here', 
@@ -108,22 +114,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -146,22 +152,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -184,22 +190,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -222,22 +228,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -260,22 +266,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -298,22 +304,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -340,22 +346,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -378,22 +384,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -416,22 +422,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -454,22 +460,22 @@ VALUES (
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Est_Amount,
-	Total_Amount, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Date_Needed,
-	Justification,
-	Comments, 
-	Create_Date, 
-	Vendor, 
-	StatusQ, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -504,7 +510,7 @@ CREATE TABLE User_DB (
     Last_Name varchar(100) not null,
     First_Name varchar(100) not null,
     Staff_ID integer not null,
-    Security Role varchar(100) not null,
+    Security_Role varchar(100) not null,
     AD_Login varchar(100) not null,
     Location_Code integer not null,
     Email varchar(200) not null
@@ -518,7 +524,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Browne', 
@@ -531,14 +537,14 @@ VALUES (
 	);
 
 INSERT INTO User_DB (
-	Last_Name, 
-	First_Name, 
-	Staff_ID, 
-	Security_Role, 
-	AD_Login, 
-	Location_Code, 
+	Last_Name,
+	First_Name,
+	Staff_ID,
+	Security_Role,
+	AD_Login,
+	Location_Code,
 	Email
-	);
+	)
 
 VALUES (
 	'Saenz', 
@@ -558,7 +564,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Rodgerson', 
@@ -578,7 +584,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Usrey-Scott', 
@@ -598,7 +604,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Dillard', 
@@ -618,7 +624,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'White', 
@@ -638,7 +644,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Green', 
@@ -649,5 +655,12 @@ VALUES (
 	12,
 	'greena@trax.com'
 	);
-
-
+    
+    ALTER TABLE PR_Request
+    MODIFY COLUMN Est_Amount DECIMAL(10,2) NOT NULL;
+    
+    ALTER TABLE PR_Request
+    MODIFY COLUMN Total_Amount DECIMAL(10,2) NOT NULL;
+    
+    ALTER TABLE PR_Request
+    MODIFY COLUMN Tax_Rate  NOT NULL;
