@@ -1,54 +1,61 @@
 /*
 moving all of Sade's code from schema to here now
 */
-
-DROP DATABASE IF EXISTS project2;
+/*
+i added most of the PR Requests and DB Names
+/*
+me and Anita have been fine-tuning this shizzle
+*/
+/*
+this would not be possible without Anita, Sade, & Jennifer (the T.A.) thanks a bunch
+*/
+DROP DATABASE if exists project2;
 
 CREATE DATABASE project2;
 
-/*
-PR Request Section
-*/
+USE project2;
+
+DROP TABLE PR_Request;
 
 CREATE TABLE PR_Request (
-    PR_Number integer AUTO_INCREMENT not null,
+    PR_Number int AUTO_INCREMENT not null,
     Item varchar(400) not null,
-    Quantity integer not null,
+    Quantity int not null,
     Unit_of_Measure varchar(100) not null,
-    Est_Amount integer not null,
-    Total_Amount integer not null,
-    Tax_Rate integer not null,
-    Estimated_Shipping integer not null,
+    Est_Amount DECIMAL(10,2) int not null,
+    Total_Amount DECIMAL(10,2) int not null,
+    Tax_Rate DECIMAL(5,2) int not null,
+    Estimated_Shipping int not null,
     Date_Needed date not null,
     Justification varchar(500) not null,
     Comments varchar(600),
     Create_Date date not null,
     Vendor varchar(100) not null,
-    Status varchar(50) not null,
+    StatusQ varchar(50) not null,
     Complete_Date date,
-    Created_By varchar(100) not null
+    Created_By varchar(100) not null,
+    PRIMARY KEY (PR_Number)
 );
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
-
+    
 VALUES (
 	1, 
 	'Description goes here', 
@@ -58,11 +65,6 @@ VALUES (
 	150.90, 
 	8.25, 
 	30.00,
-	/*
-	what is the purpose of 163.35?
-	*/
-	163.35,
-	163.35,
 	20180203, 
 	'Justification of item', 
 	'Comments about item',
@@ -70,29 +72,28 @@ VALUES (
 	'Apple', 
 	'approved', 
 	20170815,
-	'Sade Browne',
+	'Sade Browne'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
-
+    
 VALUES (
 	2, 
 	'Description goes here', 
@@ -102,8 +103,6 @@ VALUES (
 	123.33, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180203, 
 	'Justification of item', 
 	'Comments about item',
@@ -111,27 +110,26 @@ VALUES (
 	'Verizon', 
 	'approved',
 	20170815, 
-	'Sade Browne',
+	'Sade Browne'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -143,12 +141,6 @@ VALUES (
 	1111.45, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
-	/*
-	why is the number below the same as the one
-	for value 2 in the spreadsheet?
-	*/
 	20180203, 
 	'Justification of item', 
 	'Comments about item',
@@ -156,27 +148,26 @@ VALUES (
 	'Ford', 
 	'approved',
 	20170813, 
-	'Jason Saenz',
+	'Jason Saenz'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -188,8 +179,6 @@ VALUES (
 	876.23, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180103, 
 	'Justification of item', 
 	'Comments about item',
@@ -197,27 +186,26 @@ VALUES (
 	'Microsoft', 
 	'pending',
 	'no date until approved', 
-	'Jenny Usrey-Scott',
+	'Jenny Usrey-Scott'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -229,8 +217,6 @@ VALUES (
 	365.09, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180218, 
 	'Justification of item', 
 	'Comments about item',
@@ -238,27 +224,26 @@ VALUES (
 	'Shell', 
 	'pending',
 	'no date until approved', 
-	'Jenny Usrey-Scott',
+	'Jenny Usrey-Scott'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -270,8 +255,6 @@ VALUES (
 	124.44, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180222, 
 	'Justification of item', 
 	'Comments about item',
@@ -279,27 +262,26 @@ VALUES (
 	'Samsung', 
 	'approved',
 	20171125, 
-	'Anita Rodgerson',
+	'Anita Rodgerson'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -311,8 +293,6 @@ VALUES (
 	346, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180230, 
 	'Justification of item', 
 	'Comments about item',
@@ -320,27 +300,26 @@ VALUES (
 	'Ford', 
 	'approved',
 	20171210, 
-	'Anita Rodgerson',
+	'Anita Rodgerson'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -356,8 +335,6 @@ VALUES (
 	23330, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180203, 
 	'Justification of item', 
 	'Comments about item',
@@ -365,27 +342,26 @@ VALUES (
 	'Ford', 
 	'approved',
 	20171112, 
-	'Jason Saenz',
+	'Jason Saenz'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -397,8 +373,6 @@ VALUES (
 	200, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180203, 
 	'Justification of item', 
 	'Comments about item',
@@ -406,27 +380,26 @@ VALUES (
 	'Chevron', 
 	'approved',
 	'no date until approved', 
-	'Henry Dillard',
+	'Henry Dillard'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -438,8 +411,6 @@ VALUES (
 	90.98, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180214, 
 	'Justification of item', 
 	'Comments about item',
@@ -447,27 +418,26 @@ VALUES (
 	'Dell', 
 	'approved',
 	20171013, 
-	'Sade Brown',
+	'Sade Brown'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -479,8 +449,6 @@ VALUES (
 	230.91, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20170730, 
 	'Justification of item', 
 	'Comments about item',
@@ -488,27 +456,26 @@ VALUES (
 	'Amazon', 
 	'approved',
 	20170810, 
-	'Henry Dillard',
+	'Henry Dillard'
 	);
 
 INSERT INTO PR_Request (
-	PR_Number, 
-	Item, 
-	Quantity, 
-	Unit_of_Measure, 
-	Item_Price,
-	Item_Total, 
-	Tax_Rate, 
-	Estimated_Shipping,
-	Sub_Total,
-	Grand_Total,
-	Date_Needed, 
-	Justification, 
-	Comments, 
-	Vendor, 
-	Status, 
-	Complete_Date, 
-	Created_By
+    PR_Number,
+    Item,
+    Quantity,
+    Unit_of_Measure,
+    Est_Amount,
+    Total_Amount,
+    Tax_Rate,
+    Estimated_Shipping,
+    Date_Needed,
+    Justification,
+    Comments,
+    Create_Date,
+    Vendor,
+    StatusQ,
+    Complete_Date,
+    Created_By
 	)
 
 VALUES (
@@ -520,8 +487,6 @@ VALUES (
 	765.41, 
 	8.25, 
 	30.00,
-	163.35,
-	163.35,
 	20180203, 
 	'Justification of item', 
 	'Comments about item',
@@ -529,7 +494,7 @@ VALUES (
 	'Apple', 
 	'approved',
 	20170917, 
-	'Anita Rodgerson',
+	'Anita Rodgerson'
 	);
 
 
@@ -545,7 +510,7 @@ CREATE TABLE User_DB (
     Last_Name varchar(100) not null,
     First_Name varchar(100) not null,
     Staff_ID integer not null,
-    Security Role varchar(100) not null,
+    Security_Role varchar(100) not null,
     AD_Login varchar(100) not null,
     Location_Code integer not null,
     Email varchar(200) not null
@@ -559,7 +524,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Browne', 
@@ -572,14 +537,14 @@ VALUES (
 	);
 
 INSERT INTO User_DB (
-	Last_Name, 
-	First_Name, 
-	Staff_ID, 
-	Security_Role, 
-	AD_Login, 
-	Location_Code, 
+	Last_Name,
+	First_Name,
+	Staff_ID,
+	Security_Role,
+	AD_Login,
+	Location_Code,
 	Email
-	);
+	)
 
 VALUES (
 	'Saenz', 
@@ -599,7 +564,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Rodgerson', 
@@ -619,7 +584,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Usrey-Scott', 
@@ -639,7 +604,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Dillard', 
@@ -659,7 +624,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'White', 
@@ -679,7 +644,7 @@ INSERT INTO User_DB (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 
 VALUES (
 	'Green', 
@@ -690,5 +655,12 @@ VALUES (
 	12,
 	'greena@trax.com'
 	);
-
-
+    
+    ALTER TABLE PR_Request
+    MODIFY COLUMN Est_Amount DECIMAL(10,2) NOT NULL;
+    
+    ALTER TABLE PR_Request
+    MODIFY COLUMN Total_Amount DECIMAL(10,2) NOT NULL;
+    
+    ALTER TABLE PR_Request
+    MODIFY COLUMN Tax_Rate  NOT NULL;
