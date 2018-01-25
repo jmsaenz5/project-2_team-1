@@ -3,7 +3,7 @@
 var requestInfo;
 
 $(document).ready(function() {
-  $("#saveBtn").on("click", function(e) {
+  $("#addBtn").on("click", function(e) {
     e.preventDefault();
     var modalInfo = {
       itemName: $("#itemName").val().trim(),

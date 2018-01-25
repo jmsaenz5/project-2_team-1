@@ -64,7 +64,7 @@ CREATE TABLE User_DB (
     Last_Name varchar(100) not null,
     First_Name varchar(100) not null,
     Staff_ID integer not null,
-    Security Role varchar(100) not null,
+    Security_Role varchar(100) not null,
     AD_Login varchar(100) not null,
     Location_Code integer not null,
     Email varchar(200) not null
@@ -78,7 +78,7 @@ INSERT INTO PR_Request (
 	AD_Login, 
 	Location_Code, 
 	Email
-	);
+	)
 VALUES (
 	'Browne', 
 	'Sade', 
