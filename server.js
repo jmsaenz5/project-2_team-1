@@ -1,13 +1,13 @@
 // Dependencies
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require("express");
+const bodyParser = require("body-parser");
 
 // Sets up the Express App
-var app = express();
-var PORT = process.env.PORT || 3000;
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 // Requiring our models for syncing
-var db = require("./models");
+const db = require("./models");
 
 // Sets up the Express app to handle data parsing
 app.use(bodyParser.json());
@@ -18,10 +18,11 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 // Static directory
 app.use(express.static("public"));
 
-// Routes
-require("./routes/initiator-api-routes.js")(app);
-require("./routes/reviewer-api-routes.js")(app);
-require("./routes/html-routes.js")(app);
+// Set handlebars.
+const exphbs = require("express-handlebars")
+
+// Import routes and give the server access to them.
+const routes = require("./controllers/controller.js")
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: true }).then(function() {
