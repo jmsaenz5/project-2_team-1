@@ -12,24 +12,24 @@ CREATE TABLE Purchase_Request
     Qty int NOT NULL,
     Unit varchar(50) NOT NULL,
     Vendor varchar(100) NOT NULL,
-    Est_Price DECIMAL(10,2) int NOT NULL,
-    Tax_Rate DECIMAL(5,2) int NOT NULL,
+    Est_Price DECIMAL(10,2) NOT NULL,
+    Tax_Rate DECIMAL(5,2) NOT NULL,
     Est_Shipping DECIMAL (10,2) NOT NULL,
     Est_TotalPrice DECIMAL (10,2) NOT NULL,
     Justification varchar(500) NOT NULL,
     Comments varchar(500),
-    PR_Status varchar(50) NOT NULL,
+    PR_Status varchar(50),
     Date_Completed date,
-    Created_By varchar(100) NOT NULL,
+    Created_By varchar(100),
     PRIMARY KEY (PR_Number)
 );
 
 CREATE TABLE Users
 (
-    ID int AUTO_INCREMENT NOT NULL
+    ID int AUTO_INCREMENT NOT NULL,
     Last_Name varchar(100) NOT NULL,
     First_Name varchar(100) NOT NULL,
-    Email varchar(200) NOT NULL
+    Email varchar(200) NOT NULL,
     Staff_ID integer NOT NULL,
     Security_Role varchar(100) NOT NULL,
     Login_Name varchar(100) NOT NULL,
