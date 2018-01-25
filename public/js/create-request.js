@@ -36,6 +36,13 @@ $(document).ready(function() {
     $("#measureUnit").val("");
     $("#estPrice").val("");
   });
+  $("#cancelBtn").on("click", function(e){
+    e.preventDefault();
+    $("#itemName").val("");
+    $("#quant").val("");
+    $("#measureUnit").val("");
+    $("#estPrice").val("");
+  });
 
   $("#addBtn").on("click", function(e) {
     e.preventDefault();
@@ -86,7 +93,7 @@ $(document).ready(function() {
     var wholeTable = document.getElementById("newModalInfo").textContent;
     var newArray = wholeTable.trim().split(" ");
     console.log(newArray);
-    function newItem(itemName, quantity, measureUnit, itemPrice, itemTable) {}
+    /*function newItem(itemName, quantity, measureUnit, itemPrice, itemTable) {
     for (var i = 0; i < newArray.length; i += 1) {
       for (var j = 1; j < parseint((newArray.length += 1)); j += 1) {
         [j] = newArray.slice(4);
@@ -96,9 +103,10 @@ $(document).ready(function() {
           itemPrice: allPrice,
           itemTotal: allItems,
           everything: eachItem
+      
         };
       }
-    }
+    }*/
   });
 
   /*$("#saveRequest").on("click", function() {

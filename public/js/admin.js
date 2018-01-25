@@ -16,5 +16,9 @@ $(document).ready(function() {
             accountStatus: $("#accountStatus").val()
         };
     });
+    $("#editUser").on("click", function(e) {
+        e.preventDefault();
+
+    });
 });
 module.exports = newUser;
