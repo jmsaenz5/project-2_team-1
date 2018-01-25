@@ -19,10 +19,15 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static("public"));
 
 // Set handlebars.
-const exphbs = require("express-handlebars")
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({defaultLayout: "main" }));
+app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
 const routes = require("./controllers/controller.js")
+
+app.use("/", routes);
 
 // Syncing our sequelize models and then starting our Express app
 db.sequelize.sync({ force: true }).then(function() {
