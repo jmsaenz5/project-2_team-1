@@ -6,7 +6,7 @@ USE project2_db;
 CREATE TABLE Purchase_Request
 (
     PR_Number int AUTO_INCREMENT NOT NULL,
-    Date_Created date NOT NULL,
+    Date_Created TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     Item_Description varchar(400) NOT NULL,
     Date_Needed date NOT NULL,
     Qty int NOT NULL,
@@ -22,5 +22,17 @@ CREATE TABLE Purchase_Request
     Date_Completed date,
     Created_By varchar(100) NOT NULL,
     PRIMARY KEY (PR_Number)
+);
+
+CREATE TABLE Users
+(
+    ID int AUTO_INCREMENT NOT NULL
+    Last_Name varchar(100) NOT NULL,
+    First_Name varchar(100) NOT NULL,
+    Email varchar(200) NOT NULL
+    Staff_ID integer NOT NULL,
+    Security_Role varchar(100) NOT NULL,
+    Login_Name varchar(100) NOT NULL,
+    PRIMARY KEY (ID)
 );
 
