@@ -1,8 +1,8 @@
 const express = require("express");
-const app = express();
-const login = require("../models");
+const router = express.Router();
+const login = require("../models/login.js");
 
-app.get("/", function(req, res) {
+router.get("/", function(req, res) {
   login.all(function(data) {
     res.render("login");
   });
