@@ -15,7 +15,6 @@ CREATE TABLE Purchase_Request
     Est_Price DECIMAL(10,2) NOT NULL,
     Tax_Rate DECIMAL(5,2) NOT NULL,
     Est_Shipping DECIMAL (10,2) NOT NULL,
-    Est_TotalPrice DECIMAL (10,2) NOT NULL,
     Justification varchar(500) NOT NULL,
     Comments varchar(500),
     PR_Status varchar(50),
