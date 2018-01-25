@@ -6,12 +6,21 @@ $(document).ready(function() {
   $("#saveBtn").on("click", function(e) {
     e.preventDefault();
     var modalInfo = {
-      itemName: $("#itemName").val().trim(),
-      quantity: $("#quant").val().trim(),
+      itemName: $("#itemName")
+        .val()
+        .trim(),
+      quantity: $("#quant")
+        .val()
+        .trim(),
       measureUnit: $("#measureUnit").val(),
-      itemPrice: $("#estPrice").val().trim(),
+      itemPrice: $("#estPrice")
+        .val()
+        .trim(),
       itemTotal:
-        $("#quant").val() * $("#estPrice").val().trim()
+        $("#quant").val() *
+        $("#estPrice")
+          .val()
+          .trim()
     };
     console.log(modalInfo.itemTotal);
     $("#newModalInfo").append(
@@ -31,43 +40,67 @@ $(document).ready(function() {
   $("#addBtn").on("click", function(e) {
     e.preventDefault();
     var modalInfo = {
-      itemName: $("#itemName").val().trim(),
-      quantity: $("#quant").val().trim(),
+      itemName: $("#itemName")
+        .val()
+        .trim(),
+      quantity: $("#quant")
+        .val()
+        .trim(),
       measureUnit: $("#measureUnit").val(),
-      estimatedPrice: $("#estPrice").val().trim(),
-      totalPrice: $("#quant").val() * $("#estPrice").val().trim()
+      estimatedPrice: $("#estPrice")
+        .val()
+        .trim(),
+      totalPrice:
+        $("#quant").val() *
+        $("#estPrice")
+          .val()
+          .trim()
     };
     console.log("shit dammit");
-    $("#newModalInfo").append(`<tr class="allRows"><td class="tableItems">${modalInfo.itemName}</td><td class="tableQuant">${modalInfo.quantity}</td><td class="tableUnit">${modalInfo.measureUnit}</td><td class="tablePrice">$${modalInfo.estimatedPrice}</td><td class="tableTotal">$${modalInfo.totalPrice}</td></tr>`);
+    $("#newModalInfo").append(
+      `<tr class="allRows"><td class="tableItems">${
+        modalInfo.itemName
+      } </td><td class="tableQuant">${
+        modalInfo.quantity
+      } </td><td class="tableUnit">${
+        modalInfo.measureUnit
+      } </td><td class="tablePrice">$${
+        modalInfo.estimatedPrice
+      } </td><td class="tableTotal">$${modalInfo.totalPrice} </td></tr>`
+    );
     console.log("poo-gas");
-      
 
     $("#itemName").val("");
     $("#quant").val("");
     $("#measureUnit").val("");
     $("#estPrice").val("");
     var individualItems;
-  var eachItem = document.querySelectorAll("#itemTable .tableItems");
-  var allItems = $(".tableItems").html();
-  console.log(allItems);
-  var allQuant = document.getElementsByClassName("tableQuant");
-  var allUnit = document.getElementsByClassName("tableUnit");
-  var allPrice = document.getElementsByClassName("tablePrice");
-  var allTotal = document.getElementsByClassName("tableTotal");
-  for(var i=0; i<eachItem.length; i+=1) {
-    individualItems = {
-      itemName: allItems,
-      quantity: allQuant,
-      measureUnit: allUnit,
-      itemPrice: allPrice,
-      itemTotal: allItems
-    };
-    //Try stringify
-    
-    console.log(allItems[i], allQuant[i], allUnit[i], allPrice[i], allTotal[i]);
-  }
+    var eachItem = document.querySelectorAll("#itemTable .allRows");
+    var allItems = $(".tableItems").html();
+    console.log(allItems.textContent);
+    var allTheRows = $(".allRows");
+    var allQuant = document.getElementsByClassName("tableQuant");
+    var allUnit = document.getElementsByClassName("tableUnit");
+    var allPrice = document.getElementsByClassName("tablePrice");
+    var allTotal = document.getElementsByClassName("tableTotal");
+    var wholeTable = document.getElementById("newModalInfo").textContent;
+    var newArray = wholeTable.trim().split(" ");
+    console.log(newArray);
+    function newItem(itemName, quantity, measureUnit, itemPrice, itemTable) {}
+    for (var i = 0; i < newArray.length; i += 1) {
+      for (var j = 1; j < parseint((newArray.length += 1)); j += 1) {
+        [j] = newArray.slice(4);
+          itemName: allItems,
+          quantity: allQuant,
+          measureUnit: allUnit,
+          itemPrice: allPrice,
+          itemTotal: allItems,
+          everything: eachItem
+        };
+      }
+    }
   });
-  
+
   /*$("#saveRequest").on("click", function() {
     requestInfo = {
       dateNeeded: $("#dateNeeded").val().trim(),
