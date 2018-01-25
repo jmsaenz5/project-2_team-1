@@ -28,7 +28,7 @@ $(document).ready(function() {
         modalInfo.measureUnit
       }</td><td>$${modalInfo.itemPrice}</td><td>$${
         modalInfo.itemTotal
-      }</td></tr>`
+      }</td><td><button type="submit" id="editItem" class="btn btn-info>Edit</button></td></tr>`
     );
     console.log("poo");
     $("#itemName").val("");
