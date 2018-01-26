@@ -85,7 +85,7 @@ router.post('/login', function(req, res, next) {
           return res.redirect('/initiator');
         } else {
           return res.redirect('/admin');
-        }       
+        }
       }
     });
   } else {
@@ -140,7 +140,7 @@ router.post('/admin/config', function(req, res, next) {
 
 // GET /
 router.get('/', function(req, res, next) {
-  return res.render('index');
+  return res.render('login');
 });
 
 module.exports = router;
