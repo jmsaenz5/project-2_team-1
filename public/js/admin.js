@@ -23,9 +23,5 @@ $(document).ready(function() {
 
     });
 });
-<<<<<<< HEAD
-=======
 
-//module.exports = newUser;
-//doesn't like this - Jennifer said to get rid of it :)
->>>>>>> 471ba42432a5e56aa5e78072cbea4b1bb87d1de7
+

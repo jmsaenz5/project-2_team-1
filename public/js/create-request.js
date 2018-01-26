@@ -159,23 +159,13 @@ $(document).ready(function() {
 
   $("#calcTotal").on("click", function(e) {
     e.preventDefault();
-    var itemTaxRate;
-    var estimatedShipping;
+    var itemTaxRate = $("#taxRate").val().trim();
+    var estimatedShipping = $("#estShip").val().trim();
     itemSubTotal = document.getElementById("subTotal").textContent;
-    $("#taxRate").on("change", function() {
-      var itemTaxRate = $("#taxRate").value;
-      console.log(itemSubTotal);
-
-      $("#estShip").on("change", function() {
-        var estimatedShipping = $("#estShip").value;
-        console.log(estimatedPrice);
-        console.log(itemSubTotal, estimatedShipping, itemTaxRate);
-        var calculate =
-          parseInt(itemSubTotal) * parseInt(itemTaxRate) +
-          parseInt(estimatedShipping);
-        console.log(calculate);
-      });
-    });
+    var calculate =
+      parseInt(itemSubTotal) * parseInt(itemTaxRate) +
+      parseInt(estimatedShipping);
+    console.log(calculate);
   });
 
   $("#saveRequest").on("click", function(e) {
