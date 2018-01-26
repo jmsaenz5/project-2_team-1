@@ -2,7 +2,7 @@
 var newItemObject;
 var requestInfo;
 var arr;
-var itemSubTotal=0;
+var itemSubTotal = 0;
 
 //If there's time: Add a checkbox and add/delete buttons next to each table item
 $(document).ready(function() {
@@ -74,7 +74,7 @@ $(document).ready(function() {
       console.log(newItemObject);
       console.log(arr);
     }
-    $("#subTotal").html(`$${itemSubTotal}`);
+    $("#subTotal").html(`${itemSubTotal}`);
   });
 
   $("#addBtn").on("click", function(e) {
@@ -148,8 +148,7 @@ $(document).ready(function() {
         console.log(arr);
       }
     }
-    $("#subTotal").html(`$${itemSubTotal}`);
-
+    $("#subTotal").html(`${itemSubTotal}`);
   });
   $(".deleteBtn").on("click", function(e) {
     e.preventDefault();
@@ -160,10 +159,23 @@ $(document).ready(function() {
 
   $("#calcTotal").on("click", function(e) {
     e.preventDefault();
-    var estimatedShipping = document.getElementById("estShip");
-    var taxRate = document.getElementById("taxRate");
-    var calculate = (itemSubTotal * parseInt(taxRate)) + parseInt(estimatedShipping);
-    console.log(calculate);
+    var itemTaxRate;
+    var estimatedShipping;
+    itemSubTotal = document.getElementById("subTotal").textContent;
+    $("#taxRate").on("change", function() {
+      var itemTaxRate = $("#taxRate").value;
+      console.log(itemSubTotal);
+
+      $("#estShip").on("change", function() {
+        var estimatedShipping = $("#estShip").value;
+        console.log(estimatedPrice);
+        console.log(itemSubTotal, estimatedShipping, itemTaxRate);
+        var calculate =
+          parseInt(itemSubTotal) * parseInt(itemTaxRate) +
+          parseInt(estimatedShipping);
+        console.log(calculate);
+      });
+    });
   });
 
   $("#saveRequest").on("click", function(e) {
