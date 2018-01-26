@@ -1,8 +1,10 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
-var session = require('express-session');
-var app = express();
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const session = require('express-session');
+const app = express();
+const db = require("./models");
+
 
 // use sessions for tracking logins
 app.use(session({
@@ -18,10 +20,15 @@ app.use(function (req, res, next) {
 });
 
 // mongodb connection
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
 mongoose.connect("mongodb://localhost:27017");
-var db = mongoose.connection;
+}
+
+var mdb = mongoose.connection;
 // mongo error
-db.on('error', console.error.bind(console, 'connection error:'));
+mdb.on('error', console.error.bind(console, 'connection error:'));
 
 // parse incoming requests
 app.use(bodyParser.json());
@@ -29,10 +36,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // serve static files from /public
 app.use(express.static(__dirname + '/public'));
-
-//view engine setup 
-// app.set('view engine', 'pug');
-// app.set('views', __dirname + '/views');
 
 // Set Handlebars
 var exphbs = require("express-handlebars");
@@ -61,7 +64,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-// listen on port 3000
-app.listen(5050, function () {
-  console.log('Express app listening on port 5050');
+// // Syncing our sequelize models and then starting our Express app
+db.sequelize.sync({}).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
