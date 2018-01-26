@@ -60,12 +60,12 @@ router.get('/logout', function(req, res, next) {
 });
 
 // GET to render login page
-router.get('/login', function(req, res, next) {
+router.get('/', function(req, res, next) {
   return res.render('login');
 });
 
 // POST to send login information
-router.post('/login', function(req, res, next) {
+router.post('/', function(req, res, next) {
   if (req.body.staffId && req.body.password) {
     staffUser = req.body.staffId;
     console.log(staffUser);
@@ -137,10 +137,5 @@ router.post('/admin/config', function(req, res, next) {
       return next(err);
     }
 })
-
-// GET /
-router.get('/', function(req, res, next) {
-  return res.render('login');
-});
 
 module.exports = router;
