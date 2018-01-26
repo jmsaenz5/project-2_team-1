@@ -5,6 +5,7 @@ const session = require('express-session');
 const app = express();
 const db = require("./models");
 
+var PORT = process.env.PORT || 3000;
 
 // use sessions for tracking logins
 app.use(session({
