@@ -23,8 +23,5 @@ $(document).ready(function() {
 
     });
 });
-<<<<<<< HEAD
 
 
-=======
->>>>>>> 93f528481cc782cc3258ab29f7daa665a94c61db

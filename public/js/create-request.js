@@ -162,10 +162,12 @@ $(document).ready(function() {
     var itemTaxRate = $("#taxRate").val().trim();
     var estimatedShipping = $("#estShip").val().trim();
     itemSubTotal = document.getElementById("subTotal").textContent;
+    var taxOnItems = itemSubTotal *(parseInt(itemTaxRate)/100);
     var calculate =
-      parseInt(itemSubTotal) * parseInt(itemTaxRate) +
+      parseInt(itemSubTotal) + taxOnItems +
       parseInt(estimatedShipping);
     console.log(calculate);
+    $("#finalTotal").html(`Total: $${calculate}`);
   });
 
   $("#saveRequest").on("click", function(e) {
