@@ -93,6 +93,19 @@ $(document).ready(function() {
     var wholeTable = document.getElementById("newModalInfo").textContent;
     var newArray = wholeTable.trim().split(" ");
     console.log(newArray);
+    var arr =[];
+    for (var i =0; i<newArray.length; i+=5) {
+      var newItemObject = {
+        itemName: newArray[i],
+        quantity: newArray[i+=1],
+        measureUnit: newArray[i+=2],
+        itemPrice: newArray[i+=3],
+        itemTotal: newArray[i+=4]
+      };
+      arr.push(newItemObject);
+      console.log(newItemObject);
+      console.log(arr);
+    }
     /*function newItem(itemName, quantity, measureUnit, itemPrice, itemTable) {
     for (var i = 0; i < newArray.length; i += 1) {
       for (var j = 1; j < parseint((newArray.length += 1)); j += 1) {

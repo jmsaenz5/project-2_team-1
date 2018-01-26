@@ -1,15 +1,15 @@
-.formLabel {
-    margin: 10px 10px 10px 0px
-}
-
-.formInput {
-    margin: 10px 
-}
-
 button {
     margin: 10px
 }
 
 h2 {
     margin-left: 130px
+}
+
+.formLabel {
+    margin: 10px 10px 10px 0px
+}
+
+.formInput {
+    margin: 10px
 }
