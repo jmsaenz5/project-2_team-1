@@ -15,12 +15,17 @@ $(document).ready(function() {
             securityRole: $("#securityRole").val(),
             accountStatus: $("#accountStatus").val()
         };
+        $.post("./api/Initiator", newUser);
+
     });
     $("#editUser").on("click", function(e) {
         e.preventDefault();
 
     });
 });
+<<<<<<< HEAD
+=======
 
 //module.exports = newUser;
 //doesn't like this - Jennifer said to get rid of it :)
+>>>>>>> 471ba42432a5e56aa5e78072cbea4b1bb87d1de7
