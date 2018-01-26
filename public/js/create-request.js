@@ -1,5 +1,5 @@
 //import { totalmem } from "os";
-
+var newItemObject;
 var requestInfo;
 //If there's time: Add a checkbox and add/delete buttons next to each table item
 $(document).ready(function() {
@@ -95,53 +95,34 @@ $(document).ready(function() {
     console.log(newArray);
     var arr =[];
     for (var i =0; i<newArray.length; i+=5) {
-      var newItemObject = {
+      newItemObject = {
         itemName: newArray[i],
-        quantity: newArray[i+=1],
-        measureUnit: newArray[i+=2],
-        itemPrice: newArray[i+=3],
-        itemTotal: newArray[i+=4]
+        quantity: newArray[i+1],
+        measureUnit: newArray[i+2],
+        itemPrice: newArray[i+3],
+        itemTotal: newArray[i+4]
       };
       arr.push(newItemObject);
       console.log(newItemObject);
       console.log(arr);
     }
-    /*function newItem(itemName, quantity, measureUnit, itemPrice, itemTable) {
-    for (var i = 0; i < newArray.length; i += 1) {
-      for (var j = 1; j < parseint((newArray.length += 1)); j += 1) {
-        [j] = newArray.slice(4);
-          itemName: allItems,
-          quantity: allQuant,
-          measureUnit: allUnit,
-          itemPrice: allPrice,
-          itemTotal: allItems,
-          everything: eachItem
-      
-        };
-      }
-    }*/
   });
 
-  /*$("#saveRequest").on("click", function() {
+  $("#saveRequest").on("click", function(e) {
+    e.preventDefault();
     requestInfo = {
       dateNeeded: $("#dateNeeded").val().trim(),
-      itemInfo: {
-        itemName: $("#itemName").val().trim(),
-        quantity: $("#quant").val().trim(),
-        measureUnit: $("#measureUnit").val(),
-        itemPrice: $("#estPrice").val().trim(),
-        itemTotal: modalInfo.itemTotal
-      },
+      itemInfo: newItemObject,
       // subTotal:
       taxRate: $("#taxRate").val().trim(),
       estimatedShipping: $("#estShip").val().trim(),
       purchaseRequestTotal:
-      //Order of operations?  
-      modalInfo.itemTotal *
-          $("#taxRate").val().trim() + $("estShip").val().trim(),
+      newItemObject.itemTotal *
+          $("#taxRate").val() + $("estShip").val(),
       justification: $("#justify").val().trim(),
       comments: $("#comments").val().trim()
     };
-    $.post("./api/Initiator", requestInfo);
-  });*/
+    console.log(requestInfo);
+    //$.post("./api/Initiator", requestInfo);
+  });
 });
