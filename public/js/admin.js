@@ -21,4 +21,6 @@ $(document).ready(function() {
 
     });
 });
-module.exports = newUser;
+
+//module.exports = newUser;
+//doesn't like this - Jennifer said to get rid of it :)
