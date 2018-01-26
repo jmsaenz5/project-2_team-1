@@ -9,6 +9,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -22,6 +23,7 @@ VALUES
 	150.90,
 	8.25, 
 	30.00,
+    193.35,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -37,6 +39,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )     
@@ -50,6 +53,7 @@ VALUES
 	123.33,
 	8.25, 
 	30.00,
+    163.51,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -65,6 +69,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -77,7 +82,8 @@ VALUES
 	'Ford',  
 	1111.45,
 	8.25, 
-	30.00, 
+	30.00,
+    1233.15, 
 	'Justification of item', 
 	'Comments about item'
 );
@@ -93,6 +99,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -106,6 +113,7 @@ VALUES
 	876.23,
 	8.25, 
 	30.00,
+    978.52,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -121,6 +129,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -134,6 +143,7 @@ VALUES
 	365.09,
 	8.25, 
 	30.00,
+    419.21,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -149,6 +159,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -162,6 +173,7 @@ VALUES
 	124.44, 
 	8.25, 
 	30.00,
+    164.71,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -177,6 +189,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -190,6 +203,7 @@ VALUES
 	346, 
 	8.25, 
 	30.00,
+    404.55,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -205,6 +219,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -218,6 +233,7 @@ VALUES
 	23330, 
 	8.25, 
 	30.00,
+    25284.73,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -233,6 +249,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -246,6 +263,7 @@ VALUES
 	200, 
 	8.25, 
 	30.00,
+    246.50,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -261,6 +279,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -274,6 +293,7 @@ VALUES
 	90.98, 
 	8.25, 
 	30.00,
+    128.49,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -289,6 +309,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -302,6 +323,7 @@ VALUES
 	230.91, 
 	8.25, 
 	30.00,
+    276.96,
 	'Justification of item', 
 	'Comments about item'
 );
@@ -317,6 +339,7 @@ INSERT INTO Purchase_Request
     Est_Price,
     Tax_Rate,
     Est_Shipping,
+    Total_Price,
     Justification,
     Comments
 )    
@@ -329,6 +352,7 @@ VALUES (
 	765.41, 
 	8.25, 
 	30.00,
+    858.56,
 	'Justification of item', 
 	'Comments about item'
 );
