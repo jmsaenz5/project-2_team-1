@@ -15,10 +15,11 @@ $(document).ready(function() {
             securityRole: $("#securityRole").val(),
             accountStatus: $("#accountStatus").val()
         };
+        $.post("./api/Initiator", newUser);
+
     });
     $("#editUser").on("click", function(e) {
         e.preventDefault();
 
     });
 });
-module.exports = newUser;
