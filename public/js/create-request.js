@@ -161,10 +161,10 @@ $(document).ready(function() {
     var itemTaxRate = $("#taxRate").val().trim();
     var estimatedShipping = $("#estShip").val().trim();
     itemSubTotal = document.getElementById("subTotal").textContent;
-    var taxOnItems = itemSubTotal *(parseInt(itemTaxRate)/100);
+    var taxOnItems = itemSubTotal * (parseFloat(itemTaxRate)/100);
     var calculate =
-      parseInt(itemSubTotal) + taxOnItems +
-      parseInt(estimatedShipping);
+      (parseFloat(itemSubTotal) + taxOnItems +
+      parseFloat(estimatedShipping)).toFixed(2);
     console.log(calculate);
     $("#finalTotal").html(`Total: $${calculate}`);
   });
@@ -174,10 +174,10 @@ $(document).ready(function() {
     var itemTaxRate = $("#taxRate").val().trim();
     var estimatedShipping = $("#estShip").val().trim();
     itemSubTotal = document.getElementById("subTotal").textContent;
-    var taxOnItems = itemSubTotal *(parseInt(itemTaxRate)/100);
+    var taxOnItems = itemSubTotal * (parseFloat(itemTaxRate)/100);
     var calculate =
-      parseInt(itemSubTotal) + taxOnItems +
-      parseInt(estimatedShipping);
+      (parseFloat(itemSubTotal) + taxOnItems +
+      parseFloat(estimatedShipping)).toFixed(2);
     requestInfo = {
       dateNeeded: $("#dateNeeded")
         .val()
