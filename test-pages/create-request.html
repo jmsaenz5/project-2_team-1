@@ -20,13 +20,13 @@
     <div class="row">
         <h2 class="col-md-4">Create Request</h2>
     </div>
-    <form class="form-control">
+    <form id="mainForm" name="mainForm" class="form-control">
         <div class="container">
             <div class="row">
                 <label class="formLabel" for="dateNeeded">Date Needed</label>
             </div>
             <div class="row">
-                <input class="formInput" type="date" id="dateNeeded" required>
+                <input class="formInput" type="date" id="dateNeeded" autofocus required>
             </div>
             <div class="row">
                 <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>
@@ -45,7 +45,7 @@
                 <tfoot>
                     <tr>
                         <td>Subtotal:</td>
-                        <td id="subTotal" type="number"></td>
+                        <td type="number" step="0.01" id="subTotal"></td>
                     </tr>
                 </tfoot>
                 <tbody id="newModalInfo">
@@ -76,7 +76,7 @@
                 <textarea class="formInput" name="comments" id="comments" cols="45" rows="4"></textarea>
             </div>
         </div>
-        <button type="submit" class="btn btn-info" id="saveRequest">Save Request</button>
+        <button type="submit" class="btn btn-info" id="saveRequest" form="mainForm">Save Request</button>
     </form>
 
     <!--Modal-->

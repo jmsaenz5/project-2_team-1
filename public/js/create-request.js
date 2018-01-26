@@ -8,6 +8,9 @@ var itemSubTotal = 0;
 $(document).ready(function() {
   $("#saveBtn").on("click", function(e) {
     e.preventDefault();
+    var itemQuant = $("#quant").val().trim();
+    var estimatedPrice = $("#estPrice").val().trim();
+    var itemTotalPrice = (itemQuant * estimatedPrice).toFixed(2);
     $("#subTotal").val("");
     var modalInfo = {
       itemName: $("#itemName")
@@ -21,10 +24,7 @@ $(document).ready(function() {
         .val()
         .trim(),
       totalPrice:
-        $("#quant").val() *
-        $("#estPrice")
-          .val()
-          .trim()
+        itemTotalPrice
     };
     console.log("shit dammit");
     $("#newModalInfo").append(
@@ -68,7 +68,7 @@ $(document).ready(function() {
       arr.push(newItemObject);
       itemSubTotal = 0;
       for (var j = 0; j < arr.length; j += 1) {
-        itemSubTotal += parseInt(arr[j].itemTotal);
+        (itemSubTotal += parseFloat(arr[j].itemTotal)).toFixed(2);
         console.log(itemSubTotal);
       }
       console.log(newItemObject);
@@ -79,6 +79,9 @@ $(document).ready(function() {
 
   $("#addBtn").on("click", function(e) {
     e.preventDefault();
+    var itemQuant = $("#quant").val().trim();
+    var estimatedPrice = $("#estPrice").val().trim();
+    var itemTotalPrice = (itemQuant * estimatedPrice).toFixed(2);
     var modalInfo = {
       itemName: $("#itemName")
         .val()
@@ -91,10 +94,7 @@ $(document).ready(function() {
         .val()
         .trim(),
       totalPrice:
-        $("#quant").val() *
-        $("#estPrice")
-          .val()
-          .trim()
+        itemTotalPrice
     };
     console.log("shit dammit");
     $("#newModalInfo").append(
@@ -106,7 +106,7 @@ $(document).ready(function() {
         modalInfo.measureUnit
       } </td><td class="tablePrice">$${
         modalInfo.estimatedPrice
-      } </td><td class="tableTotal">${modalInfo.totalPrice} </td></tr>`
+      } </td><td type="number" step="0.01" class="tableTotal">${modalInfo.totalPrice} </td></tr>`
     );
     console.log("poo-gas");
 
@@ -128,7 +128,7 @@ $(document).ready(function() {
     var wholeTable = document.getElementById("newModalInfo").textContent;
     var newArray = wholeTable.trim().split(" ");
     console.log(newArray);
-
+    
     arr = [];
     for (var i = 0; i < newArray.length; i += 5) {
       newItemObject = {
@@ -139,9 +139,8 @@ $(document).ready(function() {
         itemTotal: newArray[i + 4]
       };
       arr.push(newItemObject);
-      itemSubTotal = 0;
       for (var j = 0; j < arr.length; j += 1) {
-        itemSubTotal += parseInt(arr[j].itemTotal);
+        (itemSubTotal += parseFloat(arr[j].itemTotal)).toFixed(2);
         console.log(itemSubTotal);
 
         console.log(newItemObject);
@@ -172,6 +171,13 @@ $(document).ready(function() {
 
   $("#saveRequest").on("click", function(e) {
     e.preventDefault();
+    var itemTaxRate = $("#taxRate").val().trim();
+    var estimatedShipping = $("#estShip").val().trim();
+    itemSubTotal = document.getElementById("subTotal").textContent;
+    var taxOnItems = itemSubTotal *(parseInt(itemTaxRate)/100);
+    var calculate =
+      parseInt(itemSubTotal) + taxOnItems +
+      parseInt(estimatedShipping);
     requestInfo = {
       dateNeeded: $("#dateNeeded")
         .val()
@@ -185,13 +191,7 @@ $(document).ready(function() {
         .val()
         .trim(),
       purchaseRequestTotal:
-        newItemObject.itemTotal *
-          $("#taxRate")
-            .val()
-            .trim() +
-        $("#estShip")
-          .val()
-          .trim(),
+        calculate,
       justification: $("#justify")
         .val()
         .trim(),
