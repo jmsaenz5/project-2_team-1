@@ -1,9 +1,9 @@
 <h2>User Functionality</h2>
 
-<button type="button" class="btn btn-info" id="addUser" data-toggle="modal" data-target="#addUserModal">Add User</button>
+<button type="button" class="btn btn-info" id="addUser" data-toggle="modal" data-target="#addUserModal" data-dismiss="modal">Add User</button>
 
 <button type="button" class="btn btn-info" id="editUser" data-toggle="modal" data-target="#editUserModal">Edit/Disable User</button>
-
+<!--modal 1 -->
 <div id="addUserModal" class="modal fade" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -71,7 +71,39 @@
                         </select>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info" id="addNewUser" data-dismiss="modal">Add User</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                </div>
             </form>
+        </div>
+    </div>
+</div>
+<!--modal 2-->
+<div id="editUserModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit/Disable User</h4>
+            </div>
+            <div id="userDatabase">
+                <table id="userTable" class="table table striped">
+                    <thread>
+                        <tr>
+                            <th>ID</th>
+                            <th>Last Name</th>
+                            <th>First Name</th>
+                            <th>Email</th>
+                            <th>Staff ID</th>
+                            <th>Security Role</th>
+                            <th>Login Name</th>
+                        </tr>
+                    </thread>
+                    <tbody id="userInfo">
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
