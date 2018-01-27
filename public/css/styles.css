@@ -63,5 +63,13 @@ footer {
 }
 
 #userFirstLabel {
-  margin-left: 10px;
+  margin-left: 15px;
+}
+
+#userEmailLabel {
+  margin-left: 15px;
+}
+
+#accountStatusLabel {
+  margin-left: 15px;
 }
