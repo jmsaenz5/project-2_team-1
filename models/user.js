@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     Staff_ID: DataTypes.INTEGER,
     Security_Role: DataTypes.STRING,
     Login_Name: DataTypes.STRING,
-    Active_Status: { DataTypes.BOOLEAN, allowNull: false, defaultValue: true }
+    Active_Status: { type: DataTypes.BOOLEAN, allowNull: false, defaultValue: true }
   });
 
   return User;
