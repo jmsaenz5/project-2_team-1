@@ -7,14 +7,9 @@ module.exports = function(sequelize, DataTypes) {
     Email: DataTypes.STRING,
     Staff_ID: DataTypes.INTEGER,
     Security_Role: DataTypes.STRING,
-    Login_Name: DataTypes.STRING
+    Login_Name: DataTypes.STRING,
+    Active_Status: { DataTypes.BOOLEAN, allowNull: false, defaultValue: true }
   });
 
-  // Initiator.associate = function(models) {
-  //   Initiator.hasMany(models.purchaseRequest, {});
-  // };
-
   return User;
-
-  // Initiator.sync();
 };
