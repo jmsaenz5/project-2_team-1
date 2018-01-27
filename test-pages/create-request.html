@@ -23,10 +23,12 @@
     <form id="mainForm" name="mainForm" class="form-control">
         <div class="container">
             <div class="row">
-                <label class="formLabel" for="dateNeeded">Date Needed</label>
+                <label class="formLabel col-md-4" for="dateNeeded">Date Needed</label>
+                <label class="formLabel col-md-4" for"vendor">Vendor</label>
             </div>
             <div class="row">
-                <input class="formInput" type="date" id="dateNeeded" autofocus required>
+                <input class="formInput col-md-4" type="date" id="dateNeeded" autofocus required>
+                <input type="text" class="formInput col-md-4" name="vendor" id="vendor" required>
             </div>
             <div class="row">
                 <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>

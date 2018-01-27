@@ -18,7 +18,7 @@ function itemAdding() {
     estimatedPrice: $("#estPrice").val().trim(),
     totalPrice: itemTotalPrice
   };
-  $("#newModalInfo").append(`<tr class="allRows"><td class="tableItems">${modalInfo.itemName} </td><td class="tableQuant">${modalInfo.quantity} </td><td class="tableUnit">${modalInfo.measureUnit} </td><td class="tablePrice">$${modalInfo.estimatedPrice} </td><td class="tableTotal">${modalInfo.totalPrice} </td></tr>`
+  $("#newModalInfo").append(`<tr class="allRows"><td class="tableItems">${modalInfo.itemName} </td><td class="tableQuant">${modalInfo.quantity} </td><td class="tableUnit">${modalInfo.measureUnit} </td><td class="tablePrice">${modalInfo.estimatedPrice} </td><td class="tableTotal">${modalInfo.totalPrice} </td></tr>`
   );
 
   $("#itemName").val("");
@@ -88,6 +88,7 @@ $(document).ready(function() {
     var calculate = (parseFloat(itemSubTotal) + taxOnItems + parseFloat(estimatedShipping)).toFixed(2);
     requestInfo = {
       dateNeeded: $("#dateNeeded").val().trim(),
+      vendor: $("#vendor").val().trim(),
       itemInfo: arr,
       // subTotal:
       taxRate: $("#taxRate").val().trim(),
