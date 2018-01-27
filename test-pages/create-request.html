@@ -20,13 +20,13 @@
     <div class="row">
         <h2 class="col-md-4">Create Request</h2>
     </div>
-    <form class="form-control">
+    <form id="mainForm" name="mainForm" class="form-control">
         <div class="container">
             <div class="row">
                 <label class="formLabel" for="dateNeeded">Date Needed</label>
             </div>
             <div class="row">
-                <input class="formInput" type="date" id="dateNeeded" required>
+                <input class="formInput" type="date" id="dateNeeded" autofocus required>
             </div>
             <div class="row">
                 <button class="btn btn-info" id="addItem" type="button" data-toggle="modal" data-target="#itemModal">Add Item</button>
@@ -42,19 +42,31 @@
                         <th>Item Total</th>
                     </tr>
                 </thead>
+                <tfoot>
+                    <tr>
+                        <td>Subtotal:</td>
+                        <td type="number" step="0.01" id="subTotal"></td>
+                    </tr>
+                </tfoot>
                 <tbody id="newModalInfo">
 
                 </tbody>
             </table>
+            <form id="totalCalc" name="totalCalc">
+                <div class="row">
+                    <label class="formLabel col-md-4" for="taxRate">Tax Rate</label>
+                    <label class="formLabel col-md-4" for="estShip">Estimated Shipping</label>
+                </div>
+                <div class="row">
+                    <input class="formInput col-md-4" type="number" id="taxRate" step="0.001">
+                    <input class="formInput col-md-4" type="number" id="estShip" step="0.01">
+                </div>
 
-            <div class="row">
-                <label class="formLabel col-md-4" for="taxRate">Tax Rate</label>
-                <label class="formLabel col-md-4" for="estShip">Estimated Shipping</label>
-            </div>
-            <div class="row">
-                <input class="formInput col-md-4" type="number" id="taxRate" step="0.001">
-                <input class="formInput col-md-4" type="number" id="estShip" step="0.01">
-            </div>
+                <div class="row">
+                    <button type="submit" form="totalCalc" id="calcTotal" class="btn btn-info col-md-4">Calculate Total</button>
+                    <p id="finalTotal" class="col-md-4"></p>
+                </div>
+            </form>
             <div class="row">
                 <label class="formLabel col-md-4" for="justify">Justification</label>
                 <label class="formLabel col-md-4" for="comments">Comments</label>
@@ -64,7 +76,7 @@
                 <textarea class="formInput" name="comments" id="comments" cols="45" rows="4"></textarea>
             </div>
         </div>
-        <button type="submit" class="btn btn-info" id="saveRequest">Save Request</button>
+        <button type="submit" class="btn btn-info" id="saveRequest" form="mainForm">Save Request</button>
     </form>
 
     <!--Modal-->
@@ -82,7 +94,7 @@
                             <label class="formLabel col-md-4" for="quant">Quantity</label>
                         </div>
                         <div class="row">
-                            <input class="formInput col-md-4" type="text" name="itemName" id="itemName" required>
+                            <input class="formInput col-md-4" type="text" name="itemName" id="itemName" autofocus required>
                             <input class="formInput col-md-4" type="number" id="quant" required>
                         </div>
                         <div class="row">

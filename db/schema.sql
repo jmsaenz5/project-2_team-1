@@ -7,14 +7,20 @@ CREATE TABLE Purchase_Request
 (
     PR_Number int AUTO_INCREMENT NOT NULL,
     Date_Created TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
-    Date_Needed DATE NOT NULL,
-    Tax_Rate DECIMAL(5,2) NOT NULL,
+    Item_Description varchar(400) NOT NULL,
+    Date_Needed date NOT NULL,
+    Qty int NOT NULL,
+    Unit varchar(50) NOT NULL,
+    Vendor varchar(100) NOT NULL,
+    Est_Price DECIMAL(10,2) NOT NULL,
+    Tax_Rate DECIMAL(5,3) NOT NULL,
     Est_Shipping DECIMAL (10,2) NOT NULL,
-    Justification VARCHAR(500) NOT NULL,
-    Comments VARCHAR(500),
-    PR_Status VARCHAR(50),
-    Date_Completed DATE,
-    Created_By VARCHAR(100),
+	  Total_Price DECIMAL (10, 2) NOT NULL,
+    Justification varchar(500) NOT NULL,
+    Comments varchar(500),
+    PR_Status varchar(50),
+    Date_Completed date,
+    Created_By varchar(100),
     PRIMARY KEY (PR_Number)
 );
 
