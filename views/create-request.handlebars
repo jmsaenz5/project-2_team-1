@@ -58,8 +58,8 @@
         <label class="formLabel col-md-4" for="comments">Comments</label>
       </div>
       <div class="row">
-        <textarea class="formInput" name="justify" id="justify" cols="45" rows="4" required></textarea>
-        <textarea class="formInput" name="comments" id="comments" cols="45" rows="4"></textarea>
+        <textarea class="formInput inputField" name="justify" id="justify" cols="45" rows="4" required></textarea>
+        <textarea class="formInput inputField" name="comments" id="comments" cols="45" rows="4"></textarea>
       </div>
     </div>
     <center><button type="submit" class="btn btn-info" id="saveRequest" form="mainForm">Save Request</button></center>
@@ -80,8 +80,8 @@
               <label class="formLabel col-md-4" for="quant">Quantity</label>
             </div>
             <div class="row">
-              <input class="formInput col-md-4" type="text" name="itemName" id="itemName" autofocus required>
-              <input class="formInput col-md-4" type="number" id="quant" required>
+              <input class="formInput col-md-4 inputField" type="text" name="itemName" id="itemName" autofocus required>
+              <input class="formInput col-md-4 inputField" type="number" id="quant" required>
             </div>
             <div class="row">
 
@@ -89,7 +89,7 @@
               <label class="formLabel col-md-4" for="estPrice">Estimated Dollar Amount</label>
             </div>
             <div class="row">
-              <select class="formInput col-md-4 validate" name="measureUnit" id="measureUnit" required="true">
+              <select class="formInput col-md-4 validate inputField" name="measureUnit" id="measureUnit" required="true">
               <option value="" selected>Select a Unit</option>
               <option value="Bottle">Bottle</option>
               <option value="Box">Box</option>
@@ -119,13 +119,13 @@
               <option value="Yard">Yard</option>
               <option value="Year">Year</option>
             </select>
-              <input class="formInput col-md-4" type="number" id="estPrice" step="0.01" required>
+              <input class="formInput col-md-4 inputField" type="number" id="estPrice" step="0.01" required>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-info" id="saveBtn" data-dismiss="modal">Save</button>
-            <button type="submit" class="btn btn-info" id="addBtn" data-backdrop="static">Add Another Item</button>
-            <button id="cancelBtn" type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn" id="saveBtn" data-dismiss="modal">Save</button>
+            <button type="submit" class="btn" id="addBtn" data-backdrop="static">Add Another Item</button>
+            <button id="cancelBtn" type="button" class="btn" data-dismiss="modal">Cancel</button>
           </div>
         </form>
       </div>
