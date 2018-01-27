@@ -80,6 +80,9 @@ footer {
 
 #finalTotal {
   margin-top: 10px;
+  margin-left: 10px;
   border: 2px solid #325C73;
   background-color: white;
+  border-radius: 5px;
+  padding-top: 5px;
 }
