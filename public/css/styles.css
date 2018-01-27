@@ -1,13 +1,19 @@
 body {
-  background-color: lightblue;
+  background-color: #CDE5E5;
   }
 
 button {
-    margin: 10px
+    margin: 10px;
+    background-color: #325C73;
+    color: white;
 }
 
 h2 {
     margin-left: 130px
+}
+img {
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 .formLabel {
@@ -20,5 +26,6 @@ h2 {
 
 .inputField {
   margin: 10px;
-  border: 2px solid green;
+  border: 2px solid #325C73;
+  border-radius: 5px;
 }
