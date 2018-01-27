@@ -27,6 +27,18 @@ footer {
   margin-bottom: 25px;
 }
 
+.modal-body {
+  background-color: #CDE5E5;
+}
+
+.modal-header {
+  background-color: #CDE5E5;
+}
+
+.modal-footer {
+  background-color: #CDE5E5;
+}
+
 .formLabel {
   margin: 10px 10px 10px 0px
 }
@@ -40,4 +52,24 @@ footer {
   margin: 10px;
   border: 2px solid #325C73;
   border-radius: 5px;
+}
+
+#userDatabase {
+  background-color: #CDE5E5;
+}
+
+#mainForm {
+  background-color: #CDE5E5;
+}
+
+#userFirstLabel {
+  margin-left: 15px;
+}
+
+#userEmailLabel {
+  margin-left: 15px;
+}
+
+#accountStatusLabel {
+  margin-left: 15px;
 }
