@@ -39,4 +39,3 @@ CREATE TABLE Items
     PR_Number INTEGER NOT NULL,
     Item_Description VARCHAR(100) NOT NULL
 );
-
