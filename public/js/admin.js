@@ -1,8 +1,6 @@
-
-
 var newUser;
 $(document).ready(function() {
-  $("#addUser").on("click", function(e) {
+  $("#addNewUser").on("click", function(e) {
     e.preventDefault();
     newUser = {
       First_Name: $("#userFirst")
@@ -20,9 +18,11 @@ $(document).ready(function() {
       Security_Role: $("#securityRole").val(),
       Active_Status: $("#accountStatus").val()
     };
+    console.log(newUser);
     $.post("./api/Users", newUser);
   });
   $("#editUser").on("click", function(e) {
     e.preventDefault();
+
   });
 });
