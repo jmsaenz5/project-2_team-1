@@ -1,14 +1,97 @@
-<form method='POST' action='/admin/config'>
-    <div class="container form-group">
-        <input type="text" placeholder="Staff ID" name="staffId" id="staffId" required>
-        <br>
-        <input type="text" placeholder="Security Role" name="securityRole" id="securityRole" required>
-        <br>
-        <input type="password" placeholder="Password" name="password" id="password" required>
-        <br>
-        <input type="password" placeholder="Confirm Password" name="confirmPassword" id="confirmPassword" required>
-        <br>
-        <br>
-        <button class="btn btn-info" type="submit" id="submit">Complete</button>
+<body>
+
+  <center>
+    <h1>Manage Users</h1>
+
+    <button type="button" class="btn" id="addUser" data-toggle="modal" data-target="#addUserModal" data-dismiss="modal">Add User</button>
+
+    <button type="button" class="btn" id="editUser" data-toggle="modal" data-target="#editUserModal">Edit/Disable User</button>
+  </center>
+
+  <!--modal 1 -->
+  <div id="addUserModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Add User</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <form>
+          <div class="modal-body">
+            <div class="row">
+              <label class="col-md-4" for="userFirst">First Name</label>
+              <label id="userLastLabel" class="col-md-4" for="userLast">Last Name</label>
+            </div>
+            <div class="row">
+              <input class="col-md-4 inputField" placeholder="Enter Text Here" type="text" id="userFirst" name="userFirst">
+              <input class="col-md-4 inputField" placeholder="Enter Text Here" type="text" id="userLast" name="userLast">
+            </div>
+            <div class="row">
+              <label class="col-md-4" for="staffID">Staff ID</label>
+              <label id="userEmailLabel" class="col-md-4" for="userEmail">Email</label>
+            </div>
+            <div class="row">
+              <input class="col-md-4 inputField" placeholder="Enter Text Here" type="number" id="staffID" name="staffID">
+              <input class="col-md-4 inputField" placeholder="Enter Text Here" type="email" id="userEmail" name="userEmail">
+            </div>
+            <div class="row">
+              <label for="securityRole" class="col-md-4">Security Role</label>
+              <label id="accountStatusLabel" for="accountStatus" class="col-md-4">Account Status</label>
+            </div>
+            <div class="row">
+
+              <select class="col-md-4 inputField" id="securityRole" name="securityRole">
+                                <option value="" selected>Select One</option>
+                                <option value="initiator">Initiator</option>
+                                <option value="reviewer">Reviewer</option>
+                                <option value="administrator">Administrator</option>
+                            </select>
+              <select class="col-md-4 inputField" id="accountStatus" name="accountStatus">
+                                <option value="" selected>Select One</option>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn" id="addNewUser" data-dismiss="modal">Add User</button>
+            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
     </div>
-</form>
+  </div>
+  <!--modal 2-->
+  <div id="editUserModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Edit/Disable User</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div id="userDatabase">
+          <table id="userTable" class="table table striped">
+            <thread>
+              <tr>
+                <th>ID</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Email</th>
+                <th>Staff ID</th>
+                <th>Security Role</th>
+                <th>Login Name</th>
+              </tr>
+            </thread>
+            <tbody id="userInfo">
+
+            </tbody>
+          </table>
+          <div class="modal-footer">
+            <button type="submit" class="btn" id="editUserComplete" data-dismiss="modal">Save</button>
+            <button type="button" class="btn" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

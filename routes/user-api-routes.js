@@ -17,10 +17,12 @@ module.exports = function(app) {
       Email: req.body.Email,
       Staff_ID: req.body.Staff_ID,
       Security_Role: req.body.Security_Role,
-      Login_Name: req.body.Login_Name,
       Active_Status: req.body.Active_Status
     }).then(function(dbUser) {
       res.json(dbUser);
     });
   });
-}
+  app.put("/api/Users", function(req, res) {
+
+  });
+};

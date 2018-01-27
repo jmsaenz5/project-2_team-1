@@ -1,4 +1,5 @@
 //import { totalmem } from "os";
+
 var newItemObject;
 var requestInfo;
 var arr;
@@ -18,7 +19,7 @@ function itemAdding() {
     estimatedPrice: parseFloat(estimatedPrice).toFixed(2),
     totalPrice: itemTotalPrice
   };
-  $("#newModalInfo").append(`<tr id="${modalInfo.itemName}${modalInfo.measureUnit}"><td id="${modalInfo.itemName}${modalInfo.measureUnit}Name" class="tableItems">${modalInfo.itemName} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Quant" class="tableQuant">${modalInfo.quantity} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Unit" class="tableUnit">${modalInfo.measureUnit} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Est" class="tablePrice">${modalInfo.estimatedPrice} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Total" class="tableTotal">${modalInfo.totalPrice} </td><td><button id="${modalInfo.itemName}${modalInfo.measureUnit}Edit" type="button" class="editBtn btn" data-toggle="modal" data-target="#editModal"> Edit </button></td><td><button id="${modalInfo.itemName}${modalInfo.measureUnit}Delete" type="button" class="deleteBtn btn"> Delete </button></td></tr>`
+  $("#newModalInfo").append(`<tr id="${modalInfo.itemName}${modalInfo.measureUnit}"><td class="tableItems">${modalInfo.itemName} </td><td class="tableQuant">${modalInfo.quantity} </td><td class="tableUnit">${modalInfo.measureUnit} </td><td class="tablePrice">${modalInfo.estimatedPrice} </td><td class="tableTotal">${modalInfo.totalPrice} </td></tr>`
   );
 
   $("#itemName").val("");
@@ -30,12 +31,12 @@ function itemAdding() {
   var newArray = wholeTable.trim().split(" ");
   console.log(newArray);
   arr = [];
-  for (var i = 0; i < newArray.length; i += 9) {
+  for (var i = 0; i < newArray.length; i += 5) {
     newItemObject = {
-      itemName: newArray[i],
-      quantity: newArray[i + 1],
-      measureUnit: newArray[i + 2],
-      itemPrice: newArray[i + 3],
+      Item_Description: newArray[i],
+      Qty: newArray[i + 1],
+      Unit: newArray[i + 2],
+      Est_Price: newArray[i + 3],
       itemTotal: newArray[i + 4]
     };
     arr.push(newItemObject);
@@ -63,14 +64,6 @@ $(document).ready(function() {
     itemAdding();
   });
 
-  $(".deleteBtn").on("click", function(e) {
-    e.preventDefault();
-  });
-  $(".editBtn").on("click", function(e) {
-    e.preventDefault();
-    $("#itemName").attr("value", document.getElementById(``))
-  });
-
   $("#calcTotal").on("click", function(e) {
     e.preventDefault();
     var itemTaxRate = $("#taxRate").val().trim();
@@ -90,17 +83,17 @@ $(document).ready(function() {
     var taxOnItems = itemSubTotal * (parseFloat(itemTaxRate) / 100);
     var calculate = (parseFloat(itemSubTotal) + taxOnItems + parseFloat(estimatedShipping)).toFixed(2);
     requestInfo = {
-      dateNeeded: $("#dateNeeded").val().trim(),
-      vendor: $("#vendor").val().trim(),
+      Date_Needed: $("#dateNeeded").val().trim(),
+      Vendor: $("#vendor").val().trim(),
       itemInfo: arr,
       // subTotal:
-      taxRate: $("#taxRate").val().trim(),
-      estimatedShipping: $("#estShip").val().trim(),
+      Tax_Rate: $("#taxRate").val().trim(),
+      Est_Shipping: $("#estShip").val().trim(),
       purchaseRequestTotal: calculate,
-      justification: $("#justify").val().trim(),
-      comments: $("#comments").val().trim()
+      Justification: $("#justify").val().trim(),
+      Comments: $("#comments").val().trim()
     };
     console.log(requestInfo);
-    //$.post("./api/Initiator", requestInfo);
+    $.post("./api/Initiator", requestInfo);
   });
 });
