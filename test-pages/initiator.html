@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Initiator</title>
+  </head>
+  <body>
+    <p>Welcome {{userName}}, you are logged in as initiator.</p>
+
+    <form>
+        <div>
+            <label for="searchGeneric">Search by P.O./P.R. Number, Initiator, Date Created, or Vendor</label>
+            <input id="searchGeneric" type="search" name="q" aria-label="Search by P.O./P.R. Number, Initiator, Date Created, or Vendor">
+            <br><br>
+            <button class="btn btn-info" id="searchButton">Search</button>
+        </div>
+    </form>
+
+    {{{userLinks}}}
+  </body>
+</html>
