@@ -2,9 +2,9 @@
 
     <h2>Manage Users</h2>
 
-    <button type="button" class="btn btn-info" id="addUser" data-toggle="modal" data-target="#addUserModal" data-dismiss="modal">Add User</button>
+    <button type="button" class="btn" id="addUser" data-toggle="modal" data-target="#addUserModal" data-dismiss="modal">Add User</button>
 
-    <button type="button" class="btn btn-info" id="editUser" data-toggle="modal" data-target="#editUserModal">Edit/Disable User</button>
+    <button type="button" class="btn" id="editUser" data-toggle="modal" data-target="#editUserModal">Edit/Disable User</button>
     <!--modal 1 -->
     <div id="addUserModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
@@ -20,16 +20,16 @@
                             <label class="col-md-4" for="userLast">Last Name</label>
                         </div>
                         <div class="row">
-                            <input class="col-md-4" type="text" id="userFirst" name="userFirst">
-                            <input class="col-md-4" type="text" id="userLast" name="userLast">
+                            <input class="col-md-4 inputField" type="text" id="userFirst" name="userFirst">
+                            <input class="col-md-4 inputField" type="text" id="userLast" name="userLast">
                         </div>
                         <div class="row">
                             <label class="col-md-4" for="staffID">Staff ID</label>
                             <label class="col-md-4" for="userEmail">Email</label>
                         </div>
                         <div class="row">
-                            <input class="col-md-4" type="number" id="staffID" name="staffID">
-                            <input class="col-md-4" type="email" id="userEmail" name="userEmail">
+                            <input class="col-md-4 inputField" type="number" id="staffID" name="staffID">
+                            <input class="col-md-4 inputField" type="email" id="userEmail" name="userEmail">
                         </div>
                         <div class="row">
                             <label for="securityRole" class="col-md-4">Security Role</label>
@@ -37,13 +37,13 @@
                         </div>
                         <div class="row">
 
-                            <select class="col-md-4" id="securityRole" name="securityRole">
+                            <select class="col-md-4 inputField" id="securityRole" name="securityRole">
                                 <option value="" selected>Select One</option>
                                 <option value="initiator">Initiator</option>
                                 <option value="reviewer">Reviewer</option>
                                 <option value="administrator">Administrator</option>
                             </select>
-                            <select class="col-md-4" id="accountStatus" name="accountStatus">
+                            <select class="col-md-4 inputField" id="accountStatus" name="accountStatus">
                                 <option value="" selected>Select One</option>
                                 <option value="active">Active</option>
                                 <option value="inactive">Inactive</option>
@@ -51,8 +51,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-info" id="addNewUser" data-dismiss="modal">Add User</button>
-                        <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn" id="addNewUser" data-dismiss="modal">Add User</button>
+                        <button type="button" class="btn" data-dismiss="modal">Cancel</button>
                     </div>
                 </form>
             </div>
