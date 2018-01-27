@@ -1,12 +1,25 @@
-<p>Welcome {{userName}}, you are logged in as initiator.</p>
+<center>
+<h2><p>Welcome {{userName}}, you are logged in as an Initiator.</p></h2>
+<hr>
+<div class="row">
+        <div class="container">
+          <h1>Search</h1>
+        </div>
+      </div>
 
-<form>
-    <div>
-        <label for="searchGeneric">Search by P.O./P.R. Number, Initiator, Date Created, or Vendor</label>
-        <input id="searchGeneric" type="search" name="q" aria-label="Search by P.O./P.R. Number, Initiator, Date Created, or Vendor">
-        <br><br>
-        <button class="btn btn-info" id="searchButton">Search</button>
-    </div>
-</form>
+      <div class="row">
+        <div class="container">
+          <label for="searchGeneric"><h4>Search by P.O./P.R. Number, Initiator, Date Created, or Vendor</h4></label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container">
+          <input id="searchGeneric" class="inputField" type="search" name="q" aria-label="Search by P.O./P.R. Number, Initiator, Date Created, or Vendor" placeholder="Search Term">
+          <br>
+          <button class="btn" id="searchButton">Search</button>
+        </div>
+      </div>
+</center>
 
 {{{userLinks}}}
