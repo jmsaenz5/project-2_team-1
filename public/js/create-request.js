@@ -88,6 +88,7 @@ $(document).ready(function() {
     var calculate = (parseFloat(itemSubTotal) + taxOnItems + parseFloat(estimatedShipping)).toFixed(2);
     requestInfo = {
       dateNeeded: $("#dateNeeded").val().trim(),
+      vendor: $("#vendor").val().trim(),
       itemInfo: arr,
       // subTotal:
       taxRate: $("#taxRate").val().trim(),
