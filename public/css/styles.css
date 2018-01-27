@@ -1,19 +1,31 @@
 body {
-  background-color: palegreen;
-  }
-
-button {
-    margin: 10px
+  background-color: #CDE5E5;
+  font-family: 'Assistant', sans-serif;
 }
 
-h2 {
-    margin-left: 130px
+button {
+  padding: 5px;
+  margin: 10px;
+  background-color: #325C73;
+  color: white;
+}
+
+img {
+  margin-top: 20px;
+  border-radius: 5px;
 }
 
 .formLabel {
-    margin: 10px 10px 10px 0px
+  margin: 10px 10px 10px 0px
 }
 
 .formInput {
-    margin: 10px
+  margin: 10px
+}
+
+.inputField {
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid #325C73;
+  border-radius: 5px;
 }
