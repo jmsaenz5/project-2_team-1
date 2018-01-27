@@ -48,7 +48,7 @@ function itemAdding() {
     console.log(newItemObject);
     console.log(arr);
     var parsedSubTotal = parseFloat(itemSubTotal).toFixed(2);
-  
+
   $("#subTotal").html(`${parsedSubTotal}`);
   }
 }
@@ -76,7 +76,7 @@ $(document).ready(function() {
   });
 
   $("#saveRequest").on("click", function(e) {
-    e.preventDefault();
+    // e.preventDefault();
     var itemTaxRate = $("#taxRate").val().trim();
     var estimatedShipping = $("#estShip").val().trim();
     itemSubTotal = document.getElementById("subTotal").textContent;
