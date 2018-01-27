@@ -18,7 +18,7 @@ function itemAdding() {
     estimatedPrice: $("#estPrice").val().trim(),
     totalPrice: itemTotalPrice
   };
-  $("#newModalInfo").append(`<tr class="allRows"><td class="tableItems">${modalInfo.itemName} </td><td class="tableQuant">${modalInfo.quantity} </td><td class="tableUnit">${modalInfo.measureUnit} </td><td class="tablePrice">$${modalInfo.estimatedPrice} </td><td class="tableTotal">${modalInfo.totalPrice} </td></tr>`
+  $("#newModalInfo").append(`<tr class="allRows"><td class="tableItems">${modalInfo.itemName} </td><td class="tableQuant">${modalInfo.quantity} </td><td class="tableUnit">${modalInfo.measureUnit} </td><td class="tablePrice">${modalInfo.estimatedPrice} </td><td class="tableTotal">${modalInfo.totalPrice} </td></tr>`
   );
 
   $("#itemName").val("");
