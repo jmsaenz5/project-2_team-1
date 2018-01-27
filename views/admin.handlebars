@@ -1,19 +1,42 @@
 <center>
-<h2>
-  <p>Welcome {{userName}}, you are logged in as an Admin.</p>
-</h2>
+  <h2><p>Welcome {{userName}}, you are logged in as an Admin.</p></h2>
+  <br>
+  <h3><p>What would you like to do?</p></h3>
 
-<form>
+  <form>
     <div>
-        <label for="searchGeneric"><h2>Search by P.O./P.R. Number, Initiator, Date Created, or Vendor</h2></label>
-        <br>
-        <input id="searchGeneric" class="inputField" type="search" name="q" aria-label="Search by P.O./P.R. Number, Initiator, Date Created, or Vendor" placeholder="Search Term">
-        <br><br>
-        <button class="btn" id="searchButton">Search</button>
-        <button class="btn" id="editRequestButton">Edit PR</button>
-        <button class="btn" id="authorizeRequestsButton">Authorize PR</button>
-        <button class="btn" id="manageUsersButton">Manage Users</button>
+
+      <div class="row">
+        <div class="container">
+          <button class="btn" id="createRequestButton">Create PR</button>
+          <button class="btn" id="editRequestButton">Edit PR</button>
+          <button class="btn" id="authorizeRequestsButton">Authorize PR</button>
+          <button class="btn" id="manageUsersButton">Manage Users</button>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="container">
+          <h1>Search</h1>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container">
+          <label for="searchGeneric"><h4>Search by P.O./P.R. Number, Initiator, Date Created, or Vendor</h4></label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="container">
+          <input id="searchGeneric" class="inputField" type="search" name="q" aria-label="Search by P.O./P.R. Number, Initiator, Date Created, or Vendor" placeholder="Search Term">
+          <br><br>
+          <button class="btn" id="searchButton">Search</button>
+        </div>
+      </div>
+
     </div>
-</form>
+  </form>
 </center>
-{{{userLinks}}}
