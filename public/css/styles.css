@@ -5,7 +5,7 @@ p {
 body {
   background-color: #CDE5E5;
   font-family: 'Assistant', sans-serif;
-  margin-bottom: 60px;
+  margin-bottom: 100px;
 }
 
 button {
@@ -18,6 +18,19 @@ button {
 img {
   margin: 20px;
   border-radius: 5px;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #CDE5E5;
+  font-size: 12px;
+  text-align: center;
+  color: #325C73;
+  clear: both;
 }
 
 .modal-body {
@@ -80,11 +93,6 @@ img {
   padding-top: 3px;
 }
 
-#footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
+#comments {
+  margin-left: 20px;
 }
