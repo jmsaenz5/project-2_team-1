@@ -1,4 +1,5 @@
 //import { totalmem } from "os";
+
 var newItemObject;
 var requestInfo;
 var arr;
@@ -32,10 +33,10 @@ function itemAdding() {
   arr = [];
   for (var i = 0; i < newArray.length; i += 5) {
     newItemObject = {
-      itemName: newArray[i],
-      quantity: newArray[i + 1],
-      measureUnit: newArray[i + 2],
-      itemPrice: newArray[i + 3],
+      Item_Description: newArray[i],
+      Qty: newArray[i + 1],
+      Unit: newArray[i + 2],
+      Est_Price: newArray[i + 3],
       itemTotal: newArray[i + 4]
     };
     arr.push(newItemObject);
@@ -82,17 +83,17 @@ $(document).ready(function() {
     var taxOnItems = itemSubTotal * (parseFloat(itemTaxRate) / 100);
     var calculate = (parseFloat(itemSubTotal) + taxOnItems + parseFloat(estimatedShipping)).toFixed(2);
     requestInfo = {
-      dateNeeded: $("#dateNeeded").val().trim(),
-      vendor: $("#vendor").val().trim(),
+      Date_Needed: $("#dateNeeded").val().trim(),
+      Vendor: $("#vendor").val().trim(),
       itemInfo: arr,
       // subTotal:
-      taxRate: $("#taxRate").val().trim(),
-      estimatedShipping: $("#estShip").val().trim(),
+      Tax_Rate: $("#taxRate").val().trim(),
+      Est_Shipping: $("#estShip").val().trim(),
       purchaseRequestTotal: calculate,
-      justification: $("#justify").val().trim(),
-      comments: $("#comments").val().trim()
+      Justification: $("#justify").val().trim(),
+      Comments: $("#comments").val().trim()
     };
     console.log(requestInfo);
-    //$.post("./api/Initiator", requestInfo);
+    $.post("./api/Initiator", requestInfo);
   });
 });
