@@ -18,7 +18,7 @@ function itemAdding() {
     estimatedPrice: parseFloat(estimatedPrice).toFixed(2),
     totalPrice: itemTotalPrice
   };
-  $("#newModalInfo").append(`<tr id="${modalInfo.itemName}${modalInfo.measureUnit}"><td id="${modalInfo.itemName}${modalInfo.measureUnit}Name" class="tableItems">${modalInfo.itemName} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Quant" class="tableQuant">${modalInfo.quantity} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Unit" class="tableUnit">${modalInfo.measureUnit} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Est" class="tablePrice">${modalInfo.estimatedPrice} </td><td id="${modalInfo.itemName}${modalInfo.measureUnit}Total" class="tableTotal">${modalInfo.totalPrice} </td><td><button id="${modalInfo.itemName}${modalInfo.measureUnit}Edit" type="button" class="editBtn btn" data-toggle="modal" data-target="#editModal"> Edit </button></td><td><button id="${modalInfo.itemName}${modalInfo.measureUnit}Delete" type="button" class="deleteBtn btn"> Delete </button></td></tr>`
+  $("#newModalInfo").append(`<tr id="${modalInfo.itemName}${modalInfo.measureUnit}"><td class="tableItems">${modalInfo.itemName} </td><td class="tableQuant">${modalInfo.quantity} </td><td class="tableUnit">${modalInfo.measureUnit} </td><td class="tablePrice">${modalInfo.estimatedPrice} </td><td class="tableTotal">${modalInfo.totalPrice} </td></tr>`
   );
 
   $("#itemName").val("");
@@ -30,7 +30,7 @@ function itemAdding() {
   var newArray = wholeTable.trim().split(" ");
   console.log(newArray);
   arr = [];
-  for (var i = 0; i < newArray.length; i += 9) {
+  for (var i = 0; i < newArray.length; i += 5) {
     newItemObject = {
       itemName: newArray[i],
       quantity: newArray[i + 1],
@@ -61,14 +61,6 @@ $(document).ready(function() {
   $("#addBtn").on("click", function(e) {
     e.preventDefault();
     itemAdding();
-  });
-
-  $(".deleteBtn").on("click", function(e) {
-    e.preventDefault();
-  });
-  $(".editBtn").on("click", function(e) {
-    e.preventDefault();
-    $("#itemName").attr("value", document.getElementById(``))
   });
 
   $("#calcTotal").on("click", function(e) {
