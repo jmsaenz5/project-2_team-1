@@ -22,4 +22,7 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
+  app.put("/api/Users", function(req, res) {
+
+  });
 };
