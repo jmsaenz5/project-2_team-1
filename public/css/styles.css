@@ -1,5 +1,5 @@
 body {
-  background-color: palegreen;
+  background-color: lightblue;
   }
 
 button {
@@ -16,4 +16,9 @@ h2 {
 
 .formInput {
     margin: 10px
+}
+
+.inputField {
+  margin: 10px;
+  border: 2px solid green;
 }
