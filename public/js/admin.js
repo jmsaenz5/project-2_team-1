@@ -20,7 +20,14 @@ $(document).ready(function() {
     };
     console.log(newUser);
     $.post("./api/Users", newUser);
+    $("#userFirst").val("");
+    $("#userLast").val("");
+    $("#staffID").val("");
+    $("#userEmail").val("");
+    $("#securityRole").val("");
+    $("#accountStatus").val("");
   });
+  
   $("#editUser").on("click", function(e) {
     e.preventDefault();
 
