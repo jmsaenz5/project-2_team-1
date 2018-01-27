@@ -27,10 +27,6 @@ footer {
   margin-bottom: 25px;
 }
 
-#mainForm {
-  background-color: #CDE5E5;
-}
-
 .modal-body {
   background-color: #CDE5E5;
 }
@@ -40,10 +36,6 @@ footer {
 }
 
 .modal-footer {
-  background-color: #CDE5E5;
-}
-
-#userDatabase {
   background-color: #CDE5E5;
 }
 
@@ -60,4 +52,16 @@ footer {
   margin: 10px;
   border: 2px solid #325C73;
   border-radius: 5px;
+}
+
+#userDatabase {
+  background-color: #CDE5E5;
+}
+
+#mainForm {
+  background-color: #CDE5E5;
+}
+
+#userFirstLabel {
+  margin-left: 10px;
 }
