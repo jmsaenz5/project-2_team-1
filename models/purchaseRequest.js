@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 
 module.exports = function(sequelize, DataTypes) {
   const Purchase_Request = sequelize.define("Purchase_Request", {
-    PR_Number: { DataTypes.INTEGER, autoincrement: true },
+    PR_Number: { type: DataTypes.INTEGER, autoincrement: true },
     Item_Description: DataTypes.STRING,
     Date_Needed: DataTypes.DATE,
     Qty: DataTypes.INTEGER,
