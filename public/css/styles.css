@@ -27,7 +27,15 @@ footer {
   margin-bottom: 25px;
 }
 
-.modal {
+.modal-body {
+  background-color: #CDE5E5;
+}
+
+.modal-header {
+  background-color: #CDE5E5;
+}
+
+.modal-footer {
   background-color: #CDE5E5;
 }
 
