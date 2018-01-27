@@ -138,4 +138,9 @@ router.post('/admin/config', function(req, res, next) {
     }
 })
 
+// GET to render create request page
+router.get('/create', function(req, res, next) {
+  return res.render('create-request');
+});
+
 module.exports = router;
