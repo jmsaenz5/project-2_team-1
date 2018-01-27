@@ -22,6 +22,12 @@ $(document).ready(function() {
         e.preventDefault();
 
     });
+
+    // $( "#createRequestButton" ).click(function() {
+    //     var url = window.location.href;
+    //     window.location = url + "/somePage.html";
+    // });
+
 });
 
 
