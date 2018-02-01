@@ -1,5 +1,4 @@
-//import { totalmem } from "os";
-
+//Why does this file exist?? It just repeats stuff from create-request.js
 var requestInfo;
 
 $(document).ready(function() {
