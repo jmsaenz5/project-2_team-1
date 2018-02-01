@@ -69,7 +69,6 @@ function itemAdding() {
     var parsedSubTotal = parseFloat(itemSubTotal).toFixed(2);
 
     $("#subTotal").html(`${parsedSubTotal}`);
-  $("#subTotal").html(`${parsedSubTotal}`);
   }
 }
 //If there's time: Add a checkbox and add/delete buttons next to each table item
@@ -104,7 +103,6 @@ $(document).ready(function() {
   });
 
   $("#saveRequest").on("click", function(e) {
-<<<<<<< HEAD
     e.preventDefault();
     var itemTaxRate = $("#taxRate")
       .val()
@@ -112,11 +110,6 @@ $(document).ready(function() {
     var estimatedShipping = $("#estShip")
       .val()
       .trim();
-=======
-    // e.preventDefault();
-    var itemTaxRate = $("#taxRate").val().trim();
-    var estimatedShipping = $("#estShip").val().trim();
->>>>>>> e5076b4fa1358690ffd4c6680e6b3f3ee686d445
     itemSubTotal = document.getElementById("subTotal").textContent;
     var taxOnItems = itemSubTotal * (parseFloat(itemTaxRate) / 100);
     var calculate = (
